@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorenzo Zambardi | Sviluppatore & Studente SMIA</title>
+    <meta name="description" content="Sito personale di Lorenzo Zambardi, studente in Statistica, Matematica e Intelligenza Artificiale alla Sapienza di Roma e sviluppatore software.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">LZ.</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about" data-i18n="nav_about">Chi Sono</a></li>
+                    <li><a href="#cv" data-i18n="nav_cv">CV</a></li>
+                    <li><a href="#projects" data-i18n="nav_projects">Progetti</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Contatti</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switcher">
+                <select id="lang-select">
+                    <option value="it">IT</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero / About Section -->
+        <section id="about" class="hero fade-in-section visible">
+            <div class="container hero-content">
+                <h2 class="greeting" data-i18n="hero_greeting">Ciao, sono</h2>
+                <h1 class="name gradient-text" data-i18n="hero_name">Lorenzo Zambardi</h1>
+                <h3 class="title" data-i18n="hero_title">Sviluppatore & Studente SMIA @ Sapienza</h3>
+                <p class="subtitle" data-i18n="hero_subtitle">Appassionato di Statistica, Matematica, Intelligenza Artificiale e Sviluppo Software.</p>
+                
+                <div class="about-text glass-card">
+                    <h4 data-i18n="about_title">Chi Sono</h4>
+                    <p data-i18n="about_text_1">Sono uno studente al terzo anno del corso di laurea in Statistica, Matematica e Intelligenza Artificiale (SMIA) presso la Sapienza Università di Roma.</p>
+                    <p data-i18n="about_text_2">Il mio percorso accademico mi fornisce solide basi logico-matematiche e analitiche, che combino con la mia passione per lo sviluppo software per creare soluzioni innovative e intelligenti.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv" class="cv-section fade-in-section">
+            <div class="container">
+                <h2 class="section-title gradient-text" data-i18n="cv_title">Curriculum Vitae</h2>
+                
+                <div class="cv-grid">
+                    <div class="cv-card glass-card">
+                        <h3 data-i18n="cv_edu_title">Formazione</h3>
+                        <div class="timeline-item">
+                            <h4 data-i18n="cv_edu_degree">Laurea Triennale in Statistica, Matematica e Intelligenza Artificiale</h4>
+                            <p class="institution" data-i18n="cv_edu_uni">Sapienza Università di Roma</p>
+                            <span class="time" data-i18n="cv_edu_time">2021 - Presente</span>
+                        </div>
+                    </div>
+
+                    <div class="cv-card glass-card">
+                        <h3 data-i18n="cv_skills_title">Competenze Tecniche</h3>
+                        <ul class="skills-list">
+                            <li data-i18n="skill_1">Python & Data Science</li>
+                            <li data-i18n="skill_2">Machine Learning / AI</li>
+                            <li data-i18n="skill_3">Sviluppo Web (HTML, CSS, JS)</li>
+                            <li data-i18n="skill_4">Matematica & Statistica</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section fade-in-section">
+            <div class="container">
+                <h2 class="section-title gradient-text" data-i18n="projects_title">Progetti</h2>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card glass-card">
+                        <h3 data-i18n="project_1_title">Progetto AI</h3>
+                        <p data-i18n="project_1_desc">Un'applicazione per il riconoscimento di pattern utilizzando reti neurali e PyTorch.</p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">AI</span>
+                        </div>
+                        <a href="https://github.com/lorenzozambardi" target="_blank" rel="noopener noreferrer" class="btn" data-i18n="project_link">Vedi su GitHub</a>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card glass-card">
+                        <h3 data-i18n="project_2_title">Analisi Dati Statistici</h3>
+                        <p data-i18n="project_2_desc">Pipeline di elaborazione e visualizzazione dati in Python con Pandas e Matplotlib.</p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Statistica</span>
+                        </div>
+                        <a href="https://github.com/lorenzozambardi" target="_blank" rel="noopener noreferrer" class="btn" data-i18n="project_link">Vedi su GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section fade-in-section">
+            <div class="container">
+                <h2 class="section-title gradient-text" data-i18n="contact_title">Contatti</h2>
+                <div class="contact-card glass-card">
+                    <p data-i18n="contact_desc">Sentiti libero di contattarmi per collaborazioni o semplicemente per scambiare due chiacchiere su AI e Sviluppo.</p>
+                    <div class="contact-links">
+                        <a href="mailto:lorenzo.zambardi@example.com" class="btn primary" data-i18n="contact_email">lorenzo.zambardi@example.com</a>
+                        <a href="https://github.com/lorenzozambardi" target="_blank" rel="noopener noreferrer" class="btn outline" data-i18n="contact_github">GitHub</a>
+                        <a href="https://linkedin.com/in/lorenzozambardi" target="_blank" rel="noopener noreferrer" class="btn outline" data-i18n="contact_linkedin">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 Lorenzo Zambardi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
