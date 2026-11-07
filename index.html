@@ -35,6 +35,63 @@
             <span class="line top-line"></span>
             <span class="line bottom-line"></span>
           </button>
+          <button class="lang-toggle-btn" aria-label="Toggle Language">
+            <div class="flag-icon flag-it">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 3 2"
+                width="100%"
+                height="100%"
+                preserveAspectRatio="none"
+              >
+                <rect width="1" height="2" fill="#009246" />
+                <rect x="1" width="1" height="2" fill="#ffffff" />
+                <rect x="2" width="1" height="2" fill="#ce2b37" />
+              </svg>
+            </div>
+            <div class="flag-icon flag-en" style="display: none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 60 30"
+                width="100%"
+                height="100%"
+                preserveAspectRatio="none"
+              >
+                <clipPath id="s-nav">
+                  <path d="M0,0 v30 h60 v-30 z" />
+                </clipPath>
+                <clipPath id="t-nav">
+                  <path
+                    d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"
+                  />
+                </clipPath>
+                <g clip-path="url(#s-nav)">
+                  <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                  <path
+                    d="M0,0 L60,30 M60,0 L0,30"
+                    stroke="#fff"
+                    stroke-width="6"
+                  />
+                  <path
+                    d="M0,0 L60,30 M60,0 L0,30"
+                    clip-path="url(#t-nav)"
+                    stroke="#C8102E"
+                    stroke-width="4"
+                  />
+                  <path
+                    d="M30,0 v30 M0,15 h60"
+                    stroke="#fff"
+                    stroke-width="10"
+                  />
+                  <path
+                    d="M30,0 v30 M0,15 h60"
+                    stroke="#C8102E"
+                    stroke-width="6"
+                  />
+                </g>
+              </svg>
+            </div>
+          </button>
         </div>
       </div>
     </header>
@@ -284,12 +341,8 @@
               </svg>
             </a>
           </div>
-          <button
-            id="lang-toggle-btn"
-            class="lang-toggle-btn"
-            aria-label="Toggle Language"
-          >
-            <div id="flag-it" class="flag-icon">
+          <button class="lang-toggle-btn" aria-label="Toggle Language">
+            <div class="flag-icon flag-it">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 3 2"
@@ -302,7 +355,7 @@
                 <rect x="2" width="1" height="2" fill="#ce2b37" />
               </svg>
             </div>
-            <div id="flag-en" class="flag-icon" style="display: none">
+            <div class="flag-icon flag-en" style="display: none">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 60 30"

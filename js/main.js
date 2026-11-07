@@ -50,36 +50,42 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateFlag(lang) {
-    const flagIt = document.getElementById("flag-it");
-    const flagEn = document.getElementById("flag-en");
-    if (flagIt && flagEn) {
-      if (lang === "it") {
-        flagIt.style.display = "flex";
-        flagEn.style.display = "none";
-      } else {
-        flagIt.style.display = "none";
-        flagEn.style.display = "flex";
-      }
-    }
+    document.querySelectorAll(".flag-it").forEach((el) => {
+      el.style.display = lang === "it" ? "flex" : "none";
+    });
+    document.querySelectorAll(".flag-en").forEach((el) => {
+      el.style.display = lang === "en" ? "flex" : "none";
+    });
   }
 
-  const langBtn = document.getElementById("lang-toggle-btn");
+  const langButtons = document.querySelectorAll(".lang-toggle-btn");
   const menuContent = document.querySelector(".menu-content");
-  if (langBtn) {
-    langBtn.addEventListener("click", () => {
-      if (menuContent) menuContent.classList.add("fade-out");
 
-      setTimeout(() => {
+  langButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (
+        menuOverlay &&
+        menuOverlay.classList.contains("active") &&
+        menuContent
+      ) {
+        menuContent.classList.add("fade-out");
+
+        setTimeout(() => {
+          currentLang = currentLang === "it" ? "en" : "it";
+          setLanguage(currentLang);
+          updateFlag(currentLang);
+
+          requestAnimationFrame(() => {
+            menuContent.classList.remove("fade-out");
+          });
+        }, 300);
+      } else {
         currentLang = currentLang === "it" ? "en" : "it";
         setLanguage(currentLang);
         updateFlag(currentLang);
-
-        requestAnimationFrame(() => {
-          if (menuContent) menuContent.classList.remove("fade-out");
-        });
-      }, 300);
+      }
     });
-  }
+  });
 
   setLanguage(currentLang);
   updateFlag(currentLang);
