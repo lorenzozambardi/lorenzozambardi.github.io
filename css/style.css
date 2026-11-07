@@ -171,6 +171,7 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 2rem;
   transition: opacity 0.3s ease;
 }
@@ -203,6 +204,9 @@ body {
 .nav-links li:nth-child(4) {
   animation-delay: 0.4s;
 }
+.nav-links li:nth-child(5) {
+  animation-delay: 0.5s;
+}
 
 .nav-links a {
   color: var(--text-secondary);
@@ -214,6 +218,63 @@ body {
 
 .nav-links a:hover {
   color: var(--text-primary);
+}
+
+/* GitHub Navbar Button (Coherent with Site & Product Sans) */
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 14px;
+  gap: 10px;
+  background-color: var(--text-primary);
+  outline: 2px var(--text-primary) solid;
+  outline-offset: -2px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: 400ms ease;
+  font-family:
+    "Product Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  line-height: 1;
+}
+
+.button .text {
+  color: var(--bg-base);
+  font-weight: 700;
+  font-size: 0.9em;
+  font-family:
+    "Product Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  transition: 400ms ease;
+  letter-spacing: 0.01em;
+}
+
+.button svg {
+  display: block;
+}
+
+.button svg path {
+  fill: var(--bg-base);
+  transition: 400ms ease;
+}
+
+.button:hover {
+  background-color: transparent;
+}
+
+.button:hover .text {
+  color: var(--text-primary);
+}
+
+.button:hover svg path {
+  fill: var(--text-primary);
 }
 
 /* Sections */
