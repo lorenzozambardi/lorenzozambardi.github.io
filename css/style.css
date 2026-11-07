@@ -389,13 +389,14 @@ section {
   letter-spacing: -0.01em;
 }
 
+.about-card .about-paragraphs p,
 .about-paragraphs p {
-  font-size: clamp(1.28rem, 2vw, 1.45rem);
+  font-size: clamp(1.3rem, 2.2vw, 1.55rem);
   line-height: 1.75;
   color: #e4e4e7;
   background: none;
   -webkit-text-fill-color: initial;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
 }
 
 .about-paragraphs p:last-child {
@@ -449,8 +450,7 @@ section {
   white-space: nowrap;
 }
 
-.bento-card p,
-.glass-bento p {
+.bento-card p {
   font-size: 1.05rem;
   line-height: 1.6;
   color: #e4e4e7;
