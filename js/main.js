@@ -135,19 +135,17 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       let targetScrollTop = 0;
 
-      if (targetId === "#about") {
-        const keynoteTrack = document.querySelector(".keynote-scroll-track");
-        if (keynoteTrack) {
-          targetScrollTop =
-            keynoteTrack.getBoundingClientRect().top + window.pageYOffset;
-        }
-      } else if (targetId === "#hero") {
+      if (targetId === "#hero") {
         targetScrollTop = 0;
       } else {
         const targetEl = document.querySelector(targetId);
         if (targetEl) {
+          const navbar = document.querySelector(".navbar");
+          const navOffset = navbar ? navbar.offsetHeight + 20 : 80;
           targetScrollTop =
-            targetEl.getBoundingClientRect().top + window.pageYOffset;
+            targetEl.getBoundingClientRect().top +
+            window.pageYOffset -
+            navOffset;
         }
       }
 
@@ -155,11 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
       window.scrollTo(0, targetScrollTop);
       document.documentElement.scrollTop = targetScrollTop;
       document.body.scrollTop = targetScrollTop;
-
-      // Recalculate keynote animations while invisible
-      if (typeof updateKeynotePresentation === "function") {
-        updateKeynotePresentation();
-      }
 
       // 3. Render target section in rAF before fading back in
       requestAnimationFrame(() => {
@@ -321,55 +314,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-  // Apple Keynote Sticky Step Scroll Engine
-  const keynoteTrack = document.querySelector(".keynote-scroll-track");
-  const keynoteSteps = document.querySelectorAll(".keynote-step");
-
-  function updateKeynotePresentation() {
-    if (!keynoteTrack || keynoteSteps.length === 0) return;
-
-    const rect = keynoteTrack.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const totalScrollable = keynoteTrack.offsetHeight - windowHeight;
-
-    if (totalScrollable <= 0) return;
-
-    let progress = -rect.top / totalScrollable;
-    const totalSteps = keynoteSteps.length;
-    const lastIndex = totalSteps - 1;
-
-    let currentStep = 0;
-    if (progress > 0 && progress < 1) {
-      currentStep = Math.floor(progress * totalSteps);
-    } else if (progress >= 1) {
-      currentStep = totalSteps;
-    }
-
-    keynoteSteps.forEach((step, index) => {
-      step.classList.remove("active", "exit-up", "enter-down");
-
-      if (index === currentStep) {
-        step.classList.add("active");
-      } else if (index < currentStep) {
-        // Keep last step active so it stays visible and scrolls naturally with the Bento Cards!
-        if (index === lastIndex && currentStep >= totalSteps) {
-          step.classList.add("active");
-        } else {
-          step.classList.add("exit-up");
-        }
-      } else {
-        step.classList.add("enter-down");
-      }
-    });
-  }
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      requestAnimationFrame(updateKeynotePresentation);
-    },
-    { passive: true },
-  );
-  updateKeynotePresentation();
 });

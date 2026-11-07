@@ -1,59 +1,362 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lorenzo Zambardi | Coming Soon</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-base: #000000;
-            --text-primary: #ffffff;
-            --text-secondary: #cccccc;
-            --font-primary: 'Inter', sans-serif;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lorenzo Zambardi | Sviluppatore & Studente SMIA</title>
+    <meta
+      name="description"
+      content="Sito personale di Lorenzo Zambardi, studente in Statistica, Matematica e Intelligenza Artificiale alla Sapienza di Roma e sviluppatore software."
+    />
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="custom-cursor" class="custom-cursor"></div>
+    <header class="navbar">
+      <div class="nav-container">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#hero" data-i18n="nav_home">Home</a></li>
+            <li><a href="#about" data-i18n="nav_about">Chi Sono</a></li>
+            <li><a href="#projects" data-i18n="nav_projects">Progetti</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contatti</a></li>
+          </ul>
+        </nav>
+        <div class="nav-right">
+          <button id="menu-btn" class="hamburger-btn" aria-label="Toggle Menu">
+            <span class="line top-line"></span>
+            <span class="line bottom-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
 
-        body {
-            background-color: var(--bg-base);
-            color: var(--text-primary);
-            font-family: var(--font-primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
+    <main>
+      <!-- Hero Section (Initial Screen with Intro & About Content) -->
+      <section id="hero" class="hero fade-in-section visible">
+        <div class="container hero-content">
+          <div class="hero-intro animate-group">
+            <h2
+              class="greeting gradient-text animate-words"
+              data-i18n="hero_greeting"
+            >
+              Ciao, sono
+            </h2>
+            <h1 class="name gradient-text animate-words" data-i18n="hero_name">
+              Lorenzo Zambardi
+            </h1>
+            <h3
+              class="title gradient-text animate-words"
+              data-i18n="hero_title"
+            >
+              Sviluppatore & Studente SMIA @ Sapienza
+            </h3>
+          </div>
 
-        .container {
-            padding: 2rem;
-            border: 1px solid var(--text-primary);
-        }
+          <!-- About Content -->
+          <div
+            id="about"
+            class="about-card glass-bento fade-in-section visible"
+          >
+            <h2 class="about-title gradient-text" data-i18n="about_title">
+              Chi Sono
+            </h2>
+            <div class="about-paragraphs">
+              <p data-i18n="about_text_1">
+                Sono uno studente del terzo anno di Scienze Matematiche per
+                l'Intelligenza Artificiale alla Sapienza di Roma. Il mio
+                percorso si concentra sull'aspetto formale dietro l'AI, con
+                particolare interesse per il Machine Learning e
+                l'Ottimizzazione.
+              </p>
+              <p data-i18n="about_text_2">
+                Applico una filosofia di lavoro basata sull'efficienza e sulla
+                riduzione di ogni frizione operativa tra pensiero e codice.
+                Unisco lo studio teorico a un approccio di rapid prototyping,
+                integrando strumenti di intelligenza artificiale per esplorare,
+                testare e validare idee ad alta velocità.
+              </p>
+              <p data-i18n="about_text_3">
+                Il mio obiettivo è sviluppare progetti tecnologici ad alto
+                impatto e orientati all'innovazione.
+              </p>
+            </div>
+          </div>
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 1rem;
-        }
+          <!-- Bento Cards Grid -->
+          <div class="about-bento-grid">
+            <div class="bento-card glass-bento fade-in-section visible">
+              <span class="bento-tag" data-i18n="about_pillar_1_tag"
+                >01 - FONDAMENTA</span
+              >
+              <h3 data-i18n="about_pillar_1_title">Matematica & AI</h3>
+              <p data-i18n="about_pillar_1_desc">
+                ML, Ottimizzazione e fondamenti formali dell'Intelligenza
+                Artificiale.
+              </p>
+            </div>
 
-        p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Lorenzo Zambardi</h1>
-        <p>Il sito è attualmente in costruzione. Torna a trovarmi presto!</p>
+            <div class="bento-card glass-bento fade-in-section visible">
+              <span class="bento-tag" data-i18n="about_pillar_2_tag"
+                >02 - FILOSOFIA</span
+              >
+              <h3 data-i18n="about_pillar_2_title">Massima Efficienza</h3>
+              <p data-i18n="about_pillar_2_desc">
+                Rapid prototyping con strumenti AI per validare idee in tempi
+                record.
+              </p>
+            </div>
+
+            <div class="bento-card glass-bento fade-in-section visible">
+              <span class="bento-tag" data-i18n="about_pillar_3_tag"
+                >03 - OBIETTIVO</span
+              >
+              <h3 data-i18n="about_pillar_3_title">Alto Impatto</h3>
+              <p data-i18n="about_pillar_3_desc">
+                Costruire tecnologie avanzate orientate all'innovazione reale.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects-section fade-in-section">
+        <div class="container">
+          <h2 class="section-title gradient-text" data-i18n="projects_title">
+            Progetti
+          </h2>
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card glass-card">
+              <h3 data-i18n="project_1_title">Progetto AI</h3>
+              <p data-i18n="project_1_desc">
+                Un'applicazione per il riconoscimento di pattern utilizzando
+                reti neurali e PyTorch.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">AI</span>
+              </div>
+              <a
+                href="https://github.com/lorenzozambardi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                data-i18n="project_link"
+                >Vedi su GitHub</a
+              >
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card glass-card">
+              <h3 data-i18n="project_2_title">Analisi Dati Statistici</h3>
+              <p data-i18n="project_2_desc">
+                Pipeline di elaborazione e visualizzazione dati in Python con
+                Pandas e Matplotlib.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Statistica</span>
+              </div>
+              <a
+                href="https://github.com/lorenzozambardi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                data-i18n="project_link"
+                >Vedi su GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section fade-in-section">
+        <div class="container">
+          <h2 class="section-title gradient-text" data-i18n="contact_title">
+            Contatti
+          </h2>
+          <div class="contact-card glass-card">
+            <p data-i18n="contact_desc">
+              Sentiti libero di contattarmi per collaborazioni o semplicemente
+              per scambiare due chiacchiere su AI e Sviluppo.
+            </p>
+            <div class="contact-links">
+              <a
+                href="mailto:lorenzo.zambardi@example.com"
+                class="btn primary"
+                data-i18n="contact_email"
+                >lorenzo.zambardi@example.com</a
+              >
+              <a
+                href="https://github.com/lorenzozambardi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn outline"
+                data-i18n="contact_github"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Menu Overlay -->
+    <div id="menu-overlay" class="menu-overlay">
+      <div class="menu-content">
+        <nav class="overlay-nav">
+          <ul>
+            <li>
+              <a href="#hero" class="overlay-link" data-i18n="nav_home">Home</a>
+            </li>
+            <li>
+              <a href="#about" class="overlay-link" data-i18n="nav_about"
+                >Chi Sono</a
+              >
+            </li>
+            <li>
+              <a href="#projects" class="overlay-link" data-i18n="nav_projects"
+                >Progetti</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="overlay-link" data-i18n="nav_contact"
+                >Contatti</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="bottom-bar">
+          <div class="social-icons">
+            <a
+              href="https://linkedin.com/in/lorenzozambardi"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a
+              href="https://github.com/lorenzozambardi"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                ></path>
+              </svg>
+            </a>
+          </div>
+          <button
+            id="lang-toggle-btn"
+            class="lang-toggle-btn"
+            aria-label="Toggle Language"
+          >
+            <div id="flag-it" class="flag-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 3 2"
+                width="100%"
+                height="100%"
+                preserveAspectRatio="none"
+              >
+                <rect width="1" height="2" fill="#009246" />
+                <rect x="1" width="1" height="2" fill="#ffffff" />
+                <rect x="2" width="1" height="2" fill="#ce2b37" />
+              </svg>
+            </div>
+            <div id="flag-en" class="flag-icon" style="display: none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 60 30"
+                width="100%"
+                height="100%"
+                preserveAspectRatio="none"
+              >
+                <clipPath id="s">
+                  <path d="M0,0 v30 h60 v-30 z" />
+                </clipPath>
+                <clipPath id="t">
+                  <path
+                    d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"
+                  />
+                </clipPath>
+                <g clip-path="url(#s)">
+                  <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                  <path
+                    d="M0,0 L60,30 M60,0 L0,30"
+                    stroke="#fff"
+                    stroke-width="6"
+                  />
+                  <path
+                    d="M0,0 L60,30 M60,0 L0,30"
+                    clip-path="url(#t)"
+                    stroke="#C8102E"
+                    stroke-width="4"
+                  />
+                  <path
+                    d="M30,0 v30 M0,15 h60"
+                    stroke="#fff"
+                    stroke-width="10"
+                  />
+                  <path
+                    d="M30,0 v30 M0,15 h60"
+                    stroke="#C8102E"
+                    stroke-width="6"
+                  />
+                </g>
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
     </div>
-</body>
+
+    <footer>
+      <div class="container text-center">
+        <p>&copy; 2026 Lorenzo Zambardi. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
