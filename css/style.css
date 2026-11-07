@@ -229,7 +229,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6px 13px;
+  padding: 8px 13px;
   gap: 7px;
   background-color: var(--text-primary);
   outline: 2px var(--text-primary) solid;
