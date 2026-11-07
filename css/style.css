@@ -773,12 +773,20 @@ footer {
 }
 
 /* Custom Cursor */
-body.has-mouse,
-body.has-mouse a,
-body.has-mouse button,
-body.has-mouse input,
-body.has-mouse select {
-  cursor: none;
+@media (min-width: 769px) and (pointer: fine) {
+  body.has-mouse,
+  body.has-mouse a,
+  body.has-mouse button,
+  body.has-mouse input,
+  body.has-mouse select {
+    cursor: none;
+  }
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
 }
 
 .custom-cursor {

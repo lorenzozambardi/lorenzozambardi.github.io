@@ -231,7 +231,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let cursorY = mouseY;
     let hasMouse = false;
 
+    function isMobile() {
+      return (
+        window.innerWidth <= 768 ||
+        window.matchMedia("(pointer: coarse)").matches
+      );
+    }
+
     document.addEventListener("mousemove", (e) => {
+      if (isMobile()) {
+        if (hasMouse) {
+          hasMouse = false;
+          document.body.classList.remove("has-mouse");
+          cursor.style.display = "none";
+        }
+        return;
+      }
+
       if (!hasMouse) {
         hasMouse = true;
         document.body.classList.add("has-mouse");
@@ -247,11 +263,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("mouseenter", () => {
-      cursor.classList.remove("hidden");
+      if (!isMobile() && hasMouse) {
+        cursor.classList.remove("hidden");
+      }
     });
 
     function animateCursor() {
-      if (hasMouse) {
+      if (hasMouse && !isMobile()) {
         cursorX += (mouseX - cursorX) * 0.2;
         cursorY += (mouseY - cursorY) * 0.2;
 
@@ -262,11 +280,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     animateCursor();
 
+    window.addEventListener("resize", () => {
+      if (isMobile() && hasMouse) {
+        hasMouse = false;
+        document.body.classList.remove("has-mouse");
+        cursor.style.display = "none";
+      }
+    });
+
     // Hover effect for clickables
     const clickables = document.querySelectorAll("a, button, input, select");
     clickables.forEach((el) => {
-      el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
-      el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
+      el.addEventListener("mouseenter", () => {
+        if (!isMobile() && hasMouse) {
+          cursor.classList.add("hover");
+        }
+      });
+      el.addEventListener("mouseleave", () => {
+        cursor.classList.remove("hover");
+      });
     });
   }
 
