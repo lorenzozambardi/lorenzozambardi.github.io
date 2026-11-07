@@ -287,7 +287,9 @@ section {
 .about-paragraphs p {
   font-size: clamp(0.95rem, 1.3vw, 1.05rem);
   line-height: 1.65;
-  color: var(--text-secondary);
+  color: #e4e4e7;
+  background: none;
+  -webkit-text-fill-color: initial;
   margin-bottom: 0.8rem;
 }
 
@@ -340,9 +342,9 @@ section {
 .glass-bento p {
   font-size: 0.95rem;
   line-height: 1.55;
-  background: linear-gradient(180deg, #e4e4e7 20%, #8e8e93 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #e4e4e7;
+  background: none;
+  -webkit-text-fill-color: initial;
 }
 
 /* Projects Section */
@@ -358,7 +360,7 @@ section {
 }
 
 .project-card p {
-  color: var(--text-secondary);
+  color: #e4e4e7;
   margin-bottom: 1.5rem;
   min-height: 48px;
 }
@@ -430,7 +432,7 @@ section {
 
 .contact-card p {
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: #e4e4e7;
   margin-bottom: 2rem;
 }
 
@@ -462,6 +464,25 @@ footer {
   transform: none;
 }
 
+/* Language Change Fade to Black */
+.lang-fade-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.lang-fade-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {
@@ -470,6 +491,10 @@ footer {
 
   .hamburger-btn {
     display: flex;
+  }
+
+  .navbar .lang-toggle-btn {
+    display: none !important;
   }
 }
 
@@ -616,7 +641,7 @@ footer {
 
 .lang-toggle-btn {
   background: none;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
   width: 28px;
   height: 28px;
@@ -627,22 +652,23 @@ footer {
   align-items: center;
   padding: 0;
   margin: 0;
-  opacity: 1;
-  transform: none;
+  opacity: 0.85;
   transition:
-    transform 0.2s ease,
-    border-color 0.2s ease;
+    opacity 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
   flex-shrink: 0;
 }
 
 .menu-overlay.active .lang-toggle-btn {
-  opacity: 1;
+  opacity: 0.85;
   transform: none;
 }
 
 .lang-toggle-btn:hover {
-  transform: scale(1.1);
-  border-color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .flag-icon {

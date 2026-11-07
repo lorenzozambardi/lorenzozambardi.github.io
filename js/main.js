@@ -60,30 +60,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const langButtons = document.querySelectorAll(".lang-toggle-btn");
   const menuContent = document.querySelector(".menu-content");
+  const langFadeOverlay = document.getElementById("lang-fade-overlay");
 
   langButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      if (
-        menuOverlay &&
-        menuOverlay.classList.contains("active") &&
-        menuContent
-      ) {
+      const isMenuOpen =
+        menuOverlay && menuOverlay.classList.contains("active");
+
+      if (isMenuOpen && menuContent) {
         menuContent.classList.add("fade-out");
+      }
+      if (langFadeOverlay) {
+        langFadeOverlay.classList.add("active");
+      }
 
-        setTimeout(() => {
-          currentLang = currentLang === "it" ? "en" : "it";
-          setLanguage(currentLang);
-          updateFlag(currentLang);
-
-          requestAnimationFrame(() => {
-            menuContent.classList.remove("fade-out");
-          });
-        }, 300);
-      } else {
+      setTimeout(() => {
         currentLang = currentLang === "it" ? "en" : "it";
         setLanguage(currentLang);
         updateFlag(currentLang);
-      }
+
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            if (isMenuOpen && menuContent) {
+              menuContent.classList.remove("fade-out");
+            }
+            if (langFadeOverlay) {
+              langFadeOverlay.classList.remove("active");
+            }
+          }, 40);
+        });
+      }, 250);
     });
   });
 
