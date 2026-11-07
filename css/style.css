@@ -390,8 +390,8 @@ section {
 }
 
 .about-paragraphs p {
-  font-size: clamp(1.18rem, 1.8vw, 1.35rem);
-  line-height: 1.7;
+  font-size: clamp(1.28rem, 2vw, 1.45rem);
+  line-height: 1.75;
   color: #e4e4e7;
   background: none;
   -webkit-text-fill-color: initial;
@@ -449,9 +449,10 @@ section {
   white-space: nowrap;
 }
 
+.bento-card p,
 .glass-bento p {
-  font-size: 1.18rem;
-  line-height: 1.65;
+  font-size: 1.05rem;
+  line-height: 1.6;
   color: #e4e4e7;
   background: none;
   -webkit-text-fill-color: initial;
