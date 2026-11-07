@@ -4,7 +4,9 @@
   --text-secondary: #999999;
   --border-color: rgba(255, 255, 255, 0.08);
 
-  --font-primary: "Inter", sans-serif;
+  --font-primary:
+    "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
 
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -221,6 +223,7 @@ body {
 }
 
 /* GitHub Navbar Button (Coherent with Site & Product Sans) */
+.nav-links .button,
 .button {
   display: flex;
   justify-content: center;
@@ -234,12 +237,11 @@ body {
   border: none;
   cursor: pointer;
   text-decoration: none !important;
-  transition: 400ms ease;
-  font-family:
-    "Product Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    sans-serif;
+  transition:
+    background-color 750ms ease,
+    color 750ms ease,
+    outline-color 750ms ease;
+  font-family: var(--font-primary);
   line-height: 1;
 }
 
@@ -247,12 +249,8 @@ body {
   color: var(--bg-base);
   font-weight: 700;
   font-size: 0.9em;
-  font-family:
-    "Product Sans",
-    -apple-system,
-    BlinkMacSystemFont,
-    sans-serif;
-  transition: 400ms ease;
+  font-family: var(--font-primary);
+  transition: color 750ms ease;
   letter-spacing: 0.01em;
 }
 
@@ -262,7 +260,7 @@ body {
 
 .button svg path {
   fill: var(--bg-base);
-  transition: 400ms ease;
+  transition: fill 750ms ease;
 }
 
 .button:hover {
