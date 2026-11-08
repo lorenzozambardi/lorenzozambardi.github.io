@@ -359,19 +359,19 @@ section {
 }
 
 .name {
-  font-size: clamp(2.8rem, 8vw, 5.2rem);
+  font-size: clamp(2.2rem, 7.5vw, 5.2rem);
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 0.4rem;
-  letter-spacing: -2px;
-  white-space: nowrap;
+  letter-spacing: -1.5px;
+  word-break: break-word;
 }
 
 .title {
-  font-size: clamp(1.2rem, 3.2vw, 1.85rem);
+  font-size: clamp(1.1rem, 3.2vw, 1.85rem);
   font-weight: 400;
   margin-bottom: 0;
-  white-space: nowrap;
+  line-height: 1.35;
 }
 
 /* About Card (Initial Screen) */
@@ -404,7 +404,7 @@ section {
 
 .about-bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.5rem;
   width: 100%;
   position: relative;
@@ -438,14 +438,13 @@ section {
 }
 
 .glass-bento h3 {
-  font-size: clamp(1.45rem, 2vw, 1.65rem);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
   font-weight: 700;
   margin-bottom: 0.6rem;
   letter-spacing: -0.01em;
   background: linear-gradient(180deg, #ffffff 15%, #a1a1aa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  white-space: nowrap;
 }
 
 .bento-card p {
@@ -469,14 +468,14 @@ section {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
   width: 100%;
 }
 
 @media (max-width: 960px) {
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -495,6 +494,8 @@ section {
     border-color 0.35s ease,
     box-shadow 0.35s ease;
   position: relative;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .project-card:hover {
@@ -553,6 +554,8 @@ section {
   margin-bottom: 1.6rem;
   position: relative;
   overflow: hidden;
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* Real Iron Stats Showcase */
@@ -678,6 +681,8 @@ section {
 /* Neovim Terminal Showcase */
 .nvim-terminal-showcase {
   padding: 1.2rem 1.4rem 1rem 1.4rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .terminal-titlebar {
@@ -687,6 +692,7 @@ section {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   padding-bottom: 0.6rem;
   margin-bottom: 0.9rem;
+  gap: 0.5rem;
 }
 
 .terminal-dots {
@@ -715,6 +721,10 @@ section {
   font-size: 0.76rem;
   color: #a1a1aa;
   font-family: monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .terminal-badge {
@@ -736,6 +746,8 @@ section {
   color: #abb2bf;
   margin-bottom: 0.9rem;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 
 .code-line {
@@ -805,6 +817,8 @@ section {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .project-title {
@@ -872,9 +886,29 @@ section {
   padding: 11px 18px;
 }
 
+/* Buttons */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 1.6rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all var(--transition-fast);
+  text-align: center;
+  cursor: pointer;
+  word-break: break-word;
+  max-width: 100%;
+  font-family: var(--font-primary);
+}
+
 .btn.primary {
   background: var(--text-primary);
   color: var(--bg-base);
+  border-color: var(--text-primary);
 }
 
 .btn.primary:hover {
@@ -897,6 +931,7 @@ section {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
+  border-radius: 28px;
 }
 
 .contact-card p {
@@ -939,8 +974,9 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
   background-color: #000000;
   z-index: 9998;
   pointer-events: none;
@@ -979,8 +1015,9 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -988,14 +1025,21 @@ footer {
   display: flex;
   flex-direction: column;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease 0.2s;
+  overflow: hidden;
+  transition:
+    opacity 0.3s ease 0.2s,
+    visibility 0.3s ease 0.2s;
 }
 
 .menu-overlay.active {
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
-  transition: opacity 0.4s ease 0s;
+  transition:
+    opacity 0.4s ease 0s,
+    visibility 0s ease 0s;
 }
 
 .menu-content {
@@ -1207,12 +1251,6 @@ footer {
   transition: opacity 0.2s ease 0s;
 }
 
-@media (max-width: 768px) {
-  .overlay-link {
-    font-size: 5rem;
-  }
-}
-
 /* Custom Cursor */
 @media (min-width: 769px) and (pointer: fine) {
   body.has-mouse,
@@ -1263,4 +1301,178 @@ footer {
   box-shadow:
     0 0 12px rgba(255, 255, 255, 0.8),
     0 0 24px rgba(255, 255, 255, 0.6);
+}
+
+/* Mobile & Tablet Responsive Adjustments */
+@media (max-width: 768px) {
+  html {
+    background-attachment: scroll;
+  }
+
+  section {
+    padding: 4.5rem 0;
+  }
+
+  .hero {
+    padding: 4.5rem 0 2.5rem 0;
+  }
+
+  .section-title {
+    font-size: clamp(2.2rem, 8vw, 3.8rem);
+    margin-bottom: 2rem;
+  }
+
+  .about-card,
+  .glass-bento,
+  .bento-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 20px;
+  }
+
+  .about-bento-grid {
+    gap: 1rem;
+  }
+
+  .projects-section {
+    padding-top: 1.2rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .project-top-bar {
+    gap: 0.75rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .project-tag {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    line-height: 1.4;
+  }
+
+  .project-showcase {
+    padding: 1.2rem 1rem;
+    border-radius: 16px;
+    margin-bottom: 1.3rem;
+  }
+
+  .project-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: 0.6rem;
+  }
+
+  .project-desc {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  .project-features {
+    gap: 0.55rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .project-features li {
+    font-size: 0.9rem;
+  }
+
+  .project-card .tags {
+    gap: 0.4rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .project-card .tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.75rem;
+  }
+
+  .contact-card {
+    padding: 2rem 1.4rem;
+    border-radius: 20px;
+  }
+
+  .contact-card p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 1.6rem;
+  }
+
+  .menu-content {
+    padding: 1.5rem 6vw;
+  }
+
+  .overlay-nav {
+    margin-top: clamp(1.5rem, 8vh, 5rem);
+  }
+
+  .overlay-nav li {
+    margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
+  }
+
+  .overlay-link {
+    font-size: clamp(2.8rem, 11vw, 4.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 4.5vw;
+  }
+
+  .project-card {
+    padding: 1.25rem 1rem;
+    border-radius: 18px;
+  }
+
+  .project-showcase {
+    padding: 1rem 0.8rem;
+  }
+
+  .screen-frame {
+    height: 175px;
+  }
+
+  .showcase-brand-badge {
+    width: 38px;
+    height: 38px;
+    bottom: 6px;
+    right: 8px;
+  }
+
+  .nvim-terminal-showcase {
+    padding: 0.9rem 0.8rem 0.7rem 0.8rem;
+  }
+
+  .terminal-code {
+    font-size: 0.72rem;
+    line-height: 1.55;
+    margin-bottom: 0.75rem;
+  }
+
+  .terminal-statusline {
+    font-size: 0.64rem;
+  }
+
+  .status-meta {
+    display: none;
+  }
+
+  .status-mode,
+  .status-file,
+  .status-pos {
+    padding: 3px 6px;
+  }
+
+  .contact-card {
+    padding: 1.8rem 1.1rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
 }
