@@ -555,106 +555,124 @@ section {
   overflow: hidden;
 }
 
-/* Iron Stats Showcase */
-.iron-stats-showcase {
-  display: flex;
-  gap: 1.4rem;
-  align-items: center;
+/* Real Iron Stats Showcase */
+.iron-stats-real-showcase {
+  padding: 1.2rem 1.2rem 0.9rem 1.2rem;
+  background:
+    radial-gradient(
+      ellipse at 50% 10%,
+      rgba(220, 38, 38, 0.16),
+      rgba(0, 0, 0, 0.65)
+    ),
+    rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
 }
 
-@media (max-width: 580px) {
-  .iron-stats-showcase {
-    flex-direction: column;
-    text-align: center;
+.app-screens-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+@media (max-width: 600px) {
+  .app-screens-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.5rem;
+    gap: 0.8rem;
+  }
+  .app-screen-item {
+    min-width: 130px;
+    scroll-snap-align: center;
+    flex-shrink: 0;
   }
 }
 
-.showcase-logo-wrap {
-  width: 95px;
-  height: 95px;
-  flex-shrink: 0;
+.app-screen-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.3));
-}
-
-.iron-stats-preview-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.showcase-telemetry {
-  flex-grow: 1;
+  gap: 0.45rem;
   min-width: 0;
 }
 
-.telemetry-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.72rem;
-  margin-bottom: 0.5rem;
-}
-
-.telemetry-title {
-  color: #a1a1aa;
-  letter-spacing: 1.5px;
-  font-weight: 700;
-}
-
-.telemetry-badge {
-  font-family: monospace;
-  font-size: 0.72rem;
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.12);
-  padding: 2px 7px;
-  border-radius: 5px;
-  border: 1px solid rgba(56, 189, 248, 0.25);
-}
-
-.bezier-graph-visual {
+.screen-frame {
   width: 100%;
-  height: 64px;
-  margin-bottom: 0.6rem;
+  height: 195px;
+  border-radius: 14px;
+  background: #090a0f;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.6),
+    0 0 16px rgba(220, 38, 38, 0.12);
+  overflow: hidden;
+  position: relative;
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.bezier-svg {
+.app-screen-item:hover .screen-frame {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.8),
+    0 0 24px rgba(220, 38, 38, 0.3);
+}
+
+.screen-notch {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  z-index: 2;
+}
+
+.screen-img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: top center;
   display: block;
 }
 
-.telemetry-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
-  padding: 0.5rem 0.6rem;
-}
-
-.t-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.t-label {
-  font-size: 0.62rem;
-  color: #71717a;
+.screen-caption {
+  font-size: 0.63rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  color: #a1a1aa;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
 }
 
-.t-val {
-  font-size: 0.76rem;
-  font-family: monospace;
-  color: #f4f4f5;
-  font-weight: 600;
-  white-space: nowrap;
+.showcase-brand-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  width: 48px;
+  height: 48px;
+  z-index: 5;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.9))
+    drop-shadow(0 0 12px rgba(220, 38, 38, 0.5));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.showcase-brand-badge .badge-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* Neovim Terminal Showcase */
