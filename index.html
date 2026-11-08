@@ -235,53 +235,497 @@
       <!-- Projects Section -->
       <section id="projects" class="projects-section fade-in-section">
         <div class="container">
-          <h2 class="section-title gradient-text" data-i18n="projects_title">
-            Progetti
-          </h2>
+          <div class="projects-header">
+            <h2 class="section-title gradient-text" data-i18n="projects_title">
+              Progetti
+            </h2>
+          </div>
           <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card glass-card">
-              <h3 data-i18n="project_1_title">Progetto AI</h3>
-              <p data-i18n="project_1_desc">
-                Un'applicazione per il riconoscimento di pattern utilizzando
-                reti neurali e PyTorch.
-              </p>
-              <div class="tags">
-                <span class="tag">Python</span>
-                <span class="tag">PyTorch</span>
-                <span class="tag">AI</span>
+            <!-- Project 1: Iron Stats -->
+            <article class="project-card glass-bento">
+              <div class="project-top-bar">
+                <span class="project-tag" data-i18n="project_1_tag"
+                  >BIOMECCANICA &amp; OTTIMIZZAZIONE</span
+                >
+                <a
+                  href="https://github.com/lorenzozambardi/Iron-Stats"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-icon-link"
+                  aria-label="Iron Stats GitHub Repository"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                </a>
               </div>
-              <a
-                href="https://github.com/lorenzozambardi"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn"
-                data-i18n="project_link"
-                >Vedi su GitHub</a
-              >
-            </div>
 
-            <!-- Project 2 -->
-            <div class="project-card glass-card">
-              <h3 data-i18n="project_2_title">Analisi Dati Statistici</h3>
-              <p data-i18n="project_2_desc">
-                Pipeline di elaborazione e visualizzazione dati in Python con
-                Pandas e Matplotlib.
-              </p>
-              <div class="tags">
-                <span class="tag">Python</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">Statistica</span>
+              <!-- Visual Showcase Iron Stats -->
+              <div class="project-showcase iron-stats-showcase">
+                <div class="showcase-logo-wrap">
+                  <img
+                    src="img/projects/iron-stats-logo.png"
+                    alt="Iron Stats Logo"
+                    class="iron-stats-preview-logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="showcase-telemetry">
+                  <div class="telemetry-header">
+                    <span class="telemetry-title">BÉZIER TENSION PROFILE</span>
+                    <span class="telemetry-badge">B(t) ∈ [0, 1] ROM</span>
+                  </div>
+                  <div class="bezier-graph-visual">
+                    <svg
+                      viewBox="0 0 280 80"
+                      class="bezier-svg"
+                      preserveAspectRatio="none"
+                    >
+                      <line
+                        x1="0"
+                        y1="20"
+                        x2="280"
+                        y2="20"
+                        stroke="rgba(255,255,255,0.06)"
+                        stroke-dasharray="3,3"
+                      />
+                      <line
+                        x1="0"
+                        y1="40"
+                        x2="280"
+                        y2="40"
+                        stroke="rgba(255,255,255,0.06)"
+                        stroke-dasharray="3,3"
+                      />
+                      <line
+                        x1="0"
+                        y1="60"
+                        x2="280"
+                        y2="60"
+                        stroke="rgba(255,255,255,0.06)"
+                        stroke-dasharray="3,3"
+                      />
+                      <line
+                        x1="70"
+                        y1="0"
+                        x2="70"
+                        y2="80"
+                        stroke="rgba(255,255,255,0.05)"
+                      />
+                      <line
+                        x1="140"
+                        y1="0"
+                        x2="140"
+                        y2="80"
+                        stroke="rgba(255,255,255,0.05)"
+                      />
+                      <line
+                        x1="210"
+                        y1="0"
+                        x2="210"
+                        y2="80"
+                        stroke="rgba(255,255,255,0.05)"
+                      />
+                      <defs>
+                        <linearGradient
+                          id="bezierGrad"
+                          x1="0%"
+                          y1="0%"
+                          x2="100%"
+                          y2="0%"
+                        >
+                          <stop offset="0%" stop-color="#38bdf8" />
+                          <stop offset="50%" stop-color="#818cf8" />
+                          <stop offset="100%" stop-color="#f43f5e" />
+                        </linearGradient>
+                        <linearGradient
+                          id="areaGrad"
+                          x1="0%"
+                          y1="0%"
+                          x2="0%"
+                          y2="100%"
+                        >
+                          <stop
+                            offset="0%"
+                            stop-color="rgba(129, 140, 248, 0.25)"
+                          />
+                          <stop
+                            offset="100%"
+                            stop-color="rgba(129, 140, 248, 0)"
+                          />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M 10 70 C 40 10, 110 15, 170 35 C 210 50, 250 68, 270 70 L 270 75 L 10 75 Z"
+                        fill="url(#areaGrad)"
+                      />
+                      <path
+                        d="M 10 70 C 40 10, 110 15, 170 35 C 210 50, 250 68, 270 70"
+                        fill="none"
+                        stroke="url(#bezierGrad)"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                      />
+                      <circle cx="10" cy="70" r="3.5" fill="#38bdf8" />
+                      <circle cx="85" cy="12" r="3" fill="#818cf8" />
+                      <circle cx="170" cy="35" r="3" fill="#a855f7" />
+                      <circle cx="270" cy="70" r="3.5" fill="#f43f5e" />
+                    </svg>
+                  </div>
+                  <div class="telemetry-stats">
+                    <div class="t-stat">
+                      <span class="t-label">EFF. REPS</span>
+                      <span class="t-val">RIR &lt; 4</span>
+                    </div>
+                    <div class="t-stat">
+                      <span class="t-label">DYN. TUT</span>
+                      <span class="t-val">v(t) Slowdown</span>
+                    </div>
+                    <div class="t-stat">
+                      <span class="t-label">FATIGUE</span>
+                      <span class="t-val">1.1^(RPE - 7.5)</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <a
-                href="https://github.com/lorenzozambardi"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn"
-                data-i18n="project_link"
-                >Vedi su GitHub</a
-              >
-            </div>
+
+              <!-- Card Body -->
+              <div class="project-body">
+                <h3 class="project-title" data-i18n="project_1_title">
+                  Iron Stats
+                </h3>
+                <p class="project-desc" data-i18n="project_1_desc">
+                  Engine computazionale avanzato per l'analisi scientifica e
+                  l'ottimizzazione del bodybuilding. Sostituisce il tonnellaggio
+                  grezzo con modelli biomeccanici a curve di Bézier di 3° grado
+                  lungo il ROM, calcolando ripetizioni effettive (HTMU), Time
+                  Under Tension (TUT) dinamico e accumulo di fatica esponenziale
+                  del SNC con un solutore multiobiettivo.
+                </p>
+
+                <ul class="project-features">
+                  <li>
+                    <svg
+                      class="check-icon"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span data-i18n="project_1_feat_1"
+                      >Modellazione della tensione muscolare con curve di Bézier
+                      cubiche lungo il ROM</span
+                    >
+                  </li>
+                  <li>
+                    <svg
+                      class="check-icon"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span data-i18n="project_1_feat_2"
+                      >Metriche dinamiche: ripetizioni effettive, TUT con
+                      rallentamento involontario e fatica esponenziale</span
+                    >
+                  </li>
+                  <li>
+                    <svg
+                      class="check-icon"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span data-i18n="project_1_feat_3"
+                      >Solutore multiobiettivo per generare schede
+                      matematicamente bilanciate</span
+                    >
+                  </li>
+                </ul>
+
+                <div class="tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">React / Vite</span>
+                  <span class="tag">Bézier Curves</span>
+                  <span class="tag">Optimization</span>
+                  <span class="tag">Capacitor</span>
+                </div>
+
+                <a
+                  href="https://github.com/lorenzozambardi/Iron-Stats"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button project-github-action"
+                >
+                  <svg
+                    class="github-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  <span class="text" data-i18n="project_1_link"
+                    >Vedi su GitHub</span
+                  >
+                  <span class="arrow-wrapper" aria-hidden="true">
+                    <svg
+                      class="arrow arrow-1"
+                      viewBox="0 0 24 24"
+                      width="14"
+                      height="14"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                    <svg
+                      class="arrow arrow-2"
+                      viewBox="0 0 24 24"
+                      width="14"
+                      height="14"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2: Neovim for STEM -->
+            <article class="project-card glass-bento">
+              <div class="project-top-bar">
+                <span class="project-tag" data-i18n="project_2_tag"
+                  >AMBIENTE DI SVILUPPO &amp; LATEX</span
+                >
+                <a
+                  href="https://github.com/lorenzozambardi/nvim-for-stem"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-icon-link"
+                  aria-label="Neovim for STEM GitHub Repository"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Visual Showcase Neovim for STEM -->
+              <div class="project-showcase nvim-terminal-showcase">
+                <div class="terminal-titlebar">
+                  <div class="terminal-dots">
+                    <span class="dot dot-close"></span>
+                    <span class="dot dot-min"></span>
+                    <span class="dot dot-max"></span>
+                  </div>
+                  <div class="terminal-title">~/.config/nvim/lua/stem.lua</div>
+                  <div class="terminal-badge">NVIM v0.10</div>
+                </div>
+                <div class="terminal-code">
+                  <div class="code-line">
+                    <span class="c-comment"
+                      >-- Leader: ';' • Texlab &amp; Pyright LSP</span
+                    >
+                  </div>
+                  <div class="code-line">
+                    <span class="c-keyword">vim</span>.<span class="c-prop"
+                      >g</span
+                    >.<span class="c-prop">mapleader</span> =
+                    <span class="c-string">";"</span>
+                  </div>
+                  <div class="code-line">
+                    <span class="c-keyword">local</span>
+                    <span class="c-def">latex_autosave</span> = {
+                    <span class="c-prop">delay</span> =
+                    <span class="c-number">3000</span>,
+                    <span class="c-prop">sync_pdf</span> =
+                    <span class="c-string">"zathura"</span> }
+                  </div>
+                  <div class="code-line">
+                    <span class="c-keyword">snippet</span>
+                    <span class="c-string">"pmat"</span>
+                    <span class="c-func">expand</span>
+                    <span class="c-string"
+                      >"\\begin{pmatrix} $1 \\end{pmatrix}"</span
+                    >
+                  </div>
+                </div>
+                <div class="terminal-statusline">
+                  <div class="status-mode">NORMAL</div>
+                  <div class="status-file">stem_notes.tex</div>
+                  <div class="status-meta">LaTeX + Lua</div>
+                  <div class="status-pos">Ln 42, Col 1</div>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="project-body">
+                <h3 class="project-title" data-i18n="project_2_title">
+                  Neovim for STEM
+                </h3>
+                <p class="project-desc" data-i18n="project_2_desc">
+                  Configurazione Neovim ultra-veloce e modulare ingegnerizzata
+                  per studenti e ricercatori STEM. Progettata per la stesura in
+                  tempo reale di documenti LaTeX con snippet matematici ad
+                  auto-espansione, sviluppo Python con Pyright LSP e
+                  formattazione Black, visualizzazione PDF sincronizzata e
+                  architettura cross-platform unificata.
+                </p>
+
+                <ul class="project-features">
+                  <li>
+                    <svg
+                      class="check-icon"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span data-i18n="project_2_feat_1"
+                      >Snippet matematici ad auto-espansione per formule
+                      complesse, matrici e integrali</span
+                    >
+                  </li>
+                  <li>
+                    <svg
+                      class="check-icon"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span data-i18n="project_2_feat_2"
+                      >Auto-save ogni 3 secondi con sincronizzazione
+                      bidirezionale del cursore nel PDF
+                      (Zathura/Sumatra/Skim)</span
+                    >
+                  </li>
+                  <li>
+                    <svg
+                      class="check-icon"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span data-i18n="project_2_feat_3"
+                      >Setup Python completo: Pyright LSP, Black, terminale
+                      integrato e script di installazione automatizzati</span
+                    >
+                  </li>
+                </ul>
+
+                <div class="tags">
+                  <span class="tag">Lua</span>
+                  <span class="tag">Neovim</span>
+                  <span class="tag">LaTeX / VimTeX</span>
+                  <span class="tag">Pyright LSP</span>
+                  <span class="tag">Treesitter</span>
+                </div>
+
+                <a
+                  href="https://github.com/lorenzozambardi/nvim-for-stem"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button project-github-action"
+                >
+                  <svg
+                    class="github-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  <span class="text" data-i18n="project_2_link"
+                    >Vedi su GitHub</span
+                  >
+                  <span class="arrow-wrapper" aria-hidden="true">
+                    <svg
+                      class="arrow arrow-1"
+                      viewBox="0 0 24 24"
+                      width="14"
+                      height="14"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                    <svg
+                      class="arrow arrow-2"
+                      viewBox="0 0 24 24"
+                      width="14"
+                      height="14"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
