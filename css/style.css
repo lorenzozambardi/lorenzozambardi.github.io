@@ -558,50 +558,112 @@ section {
   max-width: 100%;
 }
 
-/* Iron Stats Logo Showcase */
-.iron-stats-logo-showcase {
+/* Pastel Iron Stats Card */
+.iron-stats-card.pastel-card {
+  background: #fceeed;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.15);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.iron-stats-card.pastel-card:hover {
+  border-color: rgba(202, 50, 47, 0.3);
+  box-shadow:
+    0 22px 48px rgba(0, 0, 0, 0.38),
+    0 0 25px rgba(252, 238, 237, 0.15);
+}
+
+.iron-stats-disk-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 215px;
-  padding: 1.5rem;
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(220, 38, 38, 0.22) 0%,
-      rgba(220, 38, 38, 0.06) 45%,
-      rgba(0, 0, 0, 0.65) 80%
-    ),
-    rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  position: relative;
-  overflow: hidden;
-}
-
-.iron-stats-logo-wrap {
-  width: 155px;
-  height: 155px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.8))
-    drop-shadow(0 0 24px rgba(220, 38, 38, 0.35));
-  transition:
-    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    filter 0.4s ease;
-}
-
-.project-card:hover .iron-stats-logo-wrap {
-  transform: scale(1.05);
-  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.9))
-    drop-shadow(0 0 32px rgba(220, 38, 38, 0.55));
-}
-
-.iron-stats-full-logo {
+  padding: 0.8rem 0 1.6rem 0;
   width: 100%;
-  height: 100%;
+  background: none;
+  border: none;
+}
+
+.iron-stats-disk {
+  width: 180px;
+  height: 180px;
+  max-width: 100%;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.18));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.iron-stats-card:hover .iron-stats-disk {
+  transform: scale(1.03);
+}
+
+.iron-stats-card .project-tag {
+  color: #993333;
+  font-weight: 800;
+}
+
+.iron-stats-card .project-title {
+  color: #111827;
+  background: none;
+  -webkit-text-fill-color: #111827;
+  font-weight: 800;
+}
+
+.iron-stats-card .project-desc {
+  color: #374151;
+  font-weight: 450;
+}
+
+.iron-stats-card .project-features li {
+  color: #1f2937;
+  font-weight: 450;
+}
+
+.iron-stats-card .check-icon {
+  color: #ca322f;
+}
+
+.iron-stats-card .tag {
+  background: rgba(0, 0, 0, 0.05);
+  color: #1f2937;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.iron-stats-card .button.project-github-action {
+  background-color: #18181b;
+  outline-color: #18181b;
+}
+
+.iron-stats-card .button.project-github-action .text {
+  color: #ffffff;
+}
+
+.iron-stats-card .button.project-github-action .github-icon path {
+  fill: #ffffff;
+}
+
+.iron-stats-card .button.project-github-action .arrow {
+  stroke: #ffffff;
+}
+
+.iron-stats-card .button.project-github-action:hover {
+  background-color: transparent;
+}
+
+.iron-stats-card .button.project-github-action:hover .text {
+  color: #18181b;
+}
+
+.iron-stats-card .button.project-github-action:hover .github-icon path {
+  fill: #18181b;
+}
+
+.iron-stats-card .button.project-github-action:hover .arrow {
+  stroke: #18181b;
 }
 
 /* Neovim Terminal Showcase */
@@ -1361,13 +1423,9 @@ footer {
     padding: 1rem 0.8rem;
   }
 
-  .iron-stats-logo-showcase {
-    min-height: 180px;
-  }
-
-  .iron-stats-logo-wrap {
-    width: 125px;
-    height: 125px;
+  .iron-stats-disk {
+    width: 140px;
+    height: 140px;
   }
 
   .nvim-terminal-showcase {

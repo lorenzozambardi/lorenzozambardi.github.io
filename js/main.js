@@ -338,14 +338,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let rafId = null;
     let isHovered = false;
 
-    // Subtle tilt angle ("di pochissimo")
-    const maxTilt = 4.5;
+    // Minimal subtle tilt angle ("di pochissimo")
+    const maxTilt = 1.2;
 
     function updateCardTransform() {
-      currentX += (targetX - currentX) * 0.12;
-      currentY += (targetY - currentY) * 0.12;
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
 
-      card.style.transform = `perspective(1000px) rotateX(${currentX.toFixed(2)}deg) rotateY(${currentY.toFixed(2)}deg)`;
+      card.style.transform = `perspective(1200px) rotateX(${currentX.toFixed(2)}deg) rotateY(${currentY.toFixed(2)}deg)`;
 
       if (
         isHovered ||
