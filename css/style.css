@@ -485,10 +485,13 @@ section {
   justify-content: space-between;
   padding: 2.4rem;
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: #17181c; /* Antracite / Carbone solido opaco */
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   transition:
     border-color 0.35s ease,
     box-shadow 0.35s ease;
@@ -500,10 +503,10 @@ section {
 }
 
 .project-card:hover {
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.2);
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(255, 255, 255, 0.03);
+    0 22px 48px rgba(0, 0, 0, 0.65),
+    0 0 24px rgba(255, 255, 255, 0.04);
 }
 
 .project-top-bar {
@@ -558,25 +561,9 @@ section {
   max-width: 100%;
 }
 
-/* Anthracite / Charcoal Iron Stats Card */
-.iron-stats-card {
-  background: #17181c; /* Antracite / Carbone opaco solido */
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  box-shadow:
-    0 16px 36px rgba(0, 0, 0, 0.5),
-    0 2px 8px rgba(0, 0, 0, 0.3);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-.iron-stats-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow:
-    0 22px 48px rgba(0, 0, 0, 0.65),
-    0 0 24px rgba(255, 255, 255, 0.04);
-}
-
-.iron-stats-disk-container {
+/* Project Logos */
+.iron-stats-disk-container,
+.neovim-logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -595,138 +582,13 @@ section {
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.65));
 }
 
-/* Neovim Terminal Showcase */
-.nvim-terminal-showcase {
-  padding: 1.2rem 1.4rem 1rem 1.4rem;
-  min-width: 0;
+.neovim-logo-img {
+  width: auto;
+  height: 180px;
   max-width: 100%;
-}
-
-.terminal-titlebar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  padding-bottom: 0.6rem;
-  margin-bottom: 0.9rem;
-  gap: 0.5rem;
-}
-
-.terminal-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.dot-close {
-  background: #ef4444;
-}
-.dot-min {
-  background: #eab308;
-}
-.dot-max {
-  background: #22c55e;
-}
-
-.terminal-title {
-  font-size: 0.76rem;
-  color: #a1a1aa;
-  font-family: monospace;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
-}
-
-.terminal-badge {
-  font-size: 0.7rem;
-  color: #38bdf8;
-  font-family: monospace;
-  background: rgba(56, 189, 248, 0.12);
-  padding: 2px 6px;
-  border-radius: 4px;
-  border: 1px solid rgba(56, 189, 248, 0.25);
-}
-
-.terminal-code {
-  font-family:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  font-size: 0.8rem;
-  line-height: 1.65;
-  color: #abb2bf;
-  margin-bottom: 0.9rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  max-width: 100%;
-}
-
-.code-line {
-  white-space: nowrap;
-}
-
-.c-comment {
-  color: #5c6370;
-  font-style: italic;
-}
-.c-keyword {
-  color: #c678dd;
-}
-.c-string {
-  color: #98c379;
-}
-.c-prop {
-  color: #e06c75;
-}
-.c-func {
-  color: #61afef;
-}
-.c-number {
-  color: #d19a66;
-}
-.c-def {
-  color: #e5c07b;
-}
-
-.terminal-statusline {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: ui-monospace, SFMono-Regular, monospace;
-  font-size: 0.68rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.status-mode {
-  background: #61afef;
-  color: #0f172a;
-  font-weight: 800;
-  padding: 3px 8px;
-}
-
-.status-file {
-  color: #e4e4e7;
-  padding: 3px 8px;
-  font-weight: 600;
-}
-
-.status-meta {
-  color: #94a3b8;
-  padding: 3px 8px;
-}
-
-.status-pos {
-  color: #64748b;
-  padding: 3px 8px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.65));
 }
 
 /* Card Body & Typography */
@@ -1357,28 +1219,8 @@ footer {
     height: 140px;
   }
 
-  .nvim-terminal-showcase {
-    padding: 0.9rem 0.8rem 0.7rem 0.8rem;
-  }
-
-  .terminal-code {
-    font-size: 0.72rem;
-    line-height: 1.55;
-    margin-bottom: 0.75rem;
-  }
-
-  .terminal-statusline {
-    font-size: 0.64rem;
-  }
-
-  .status-meta {
-    display: none;
-  }
-
-  .status-mode,
-  .status-file,
-  .status-pos {
-    padding: 3px 6px;
+  .neovim-logo-img {
+    height: 140px;
   }
 
   .contact-card {
