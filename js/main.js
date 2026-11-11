@@ -398,34 +398,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Secure Email Obfuscation & Copy Functionality
+  // Secure Email & Form Handling via FormSubmit AJAX
   const encodedEmail = "emFtYmFyZGlsb3JlbnpvQGdtYWlsLmNvbQ=="; // [redacted-email]
-  const copyEmailBtn = document.getElementById("copy-email-trigger");
-  const copyBtnText = copyEmailBtn?.querySelector(".copy-btn-text");
-
-  if (copyEmailBtn) {
-    copyEmailBtn.addEventListener("click", () => {
-      const email = atob(encodedEmail);
-      navigator.clipboard.writeText(email).then(() => {
-        if (copyBtnText) {
-          const originalText = copyBtnText.textContent;
-          const copiedText =
-            currentLang === "it"
-              ? translations.it.contact_copied
-              : translations.en.contact_copied;
-          copyBtnText.textContent = copiedText;
-          copyEmailBtn.classList.add("copied");
-
-          setTimeout(() => {
-            copyBtnText.textContent = originalText;
-            copyEmailBtn.classList.remove("copied");
-          }, 2500);
-        }
-      });
-    });
-  }
-
-  // Interactive Contact Form Handling via FormSubmit AJAX
   const contactForm = document.getElementById("contact-form");
   const formFeedback = document.getElementById("form-feedback");
   const submitBtn = document.getElementById("contact-submit-btn");

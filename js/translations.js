@@ -56,15 +56,9 @@ const translations = {
     project_link: "Vedi su GitHub",
 
     contact_title: "Contatti",
-    contact_status_available: "Disponibile per nuovi progetti & collaborazioni",
     contact_heading: "Costruiamo qualcosa di straordinario insieme.",
     contact_desc:
-      "Hai un'idea, un progetto innovativo in ambito AI/Software o vuoi semplicemente scambiare due chiacchiere? Inviami un messaggio.",
-    contact_direct_reach: "CONTATTO DIRETTO PROTETTO",
-    contact_copy_btn: "Copia",
-    contact_copied: "Copiata! ✓",
-    contact_anti_spam_hint:
-      "Antispam attivo: l'indirizzo reale è protetto da web-scraper automatici.",
+      "Hai un'idea o un progetto innovativo in ambito AI/Software da sviluppare? Inviami un messaggio.",
     contact_name_label: "Nome",
     contact_name_placeholder: "Il tuo nome",
     contact_email_label: "Email",
@@ -79,7 +73,7 @@ const translations = {
     contact_success:
       "Messaggio inviato con successo! Ti risponderò al più presto.",
     contact_error:
-      "Si è verificato un errore durante l'invio. Riprova o copia l'indirizzo email sopra.",
+      "Si è verificato un errore durante l'invio. Riprova più tardi.",
   },
   en: {
     nav_home: "Home",
@@ -138,15 +132,9 @@ const translations = {
     project_link: "View on GitHub",
 
     contact_title: "Contact",
-    contact_status_available: "Available for new projects & collaborations",
     contact_heading: "Let's build something extraordinary together.",
     contact_desc:
-      "Have an idea, an innovative AI/Software project, or just want to chat? Send me a message.",
-    contact_direct_reach: "SECURE DIRECT REACH",
-    contact_copy_btn: "Copy",
-    contact_copied: "Copied! ✓",
-    contact_anti_spam_hint:
-      "Anti-spam active: address is shielded from automated web scrapers.",
+      "Have an idea or an innovative AI/Software project to develop? Send me a message.",
     contact_name_label: "Name",
     contact_name_placeholder: "Your name",
     contact_email_label: "Email",
@@ -158,7 +146,6 @@ const translations = {
     contact_send_btn: "Send Message",
     contact_sending: "Sending...",
     contact_success: "Message sent successfully! I'll get back to you shortly.",
-    contact_error:
-      "An error occurred while sending. Please try again or copy the email address above.",
+    contact_error: "An error occurred while sending. Please try again later.",
   },
 };
