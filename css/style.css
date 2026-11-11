@@ -485,13 +485,10 @@ section {
   justify-content: space-between;
   padding: 2.4rem;
   border-radius: 28px;
-  background: #17181c; /* Antracite / Carbone solido opaco */
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  box-shadow:
-    0 16px 36px rgba(0, 0, 0, 0.5),
-    0 2px 8px rgba(0, 0, 0, 0.3);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   transition:
     border-color 0.35s ease,
     box-shadow 0.35s ease;
@@ -503,10 +500,10 @@ section {
 }
 
 .project-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.18);
   box-shadow:
-    0 22px 48px rgba(0, 0, 0, 0.65),
-    0 0 24px rgba(255, 255, 255, 0.04);
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(255, 255, 255, 0.03);
 }
 
 .project-top-bar {
