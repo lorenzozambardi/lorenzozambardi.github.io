@@ -56,10 +56,30 @@ const translations = {
     project_link: "Vedi su GitHub",
 
     contact_title: "Contatti",
+    contact_status_available: "Disponibile per nuovi progetti & collaborazioni",
+    contact_heading: "Costruiamo qualcosa di straordinario insieme.",
     contact_desc:
-      "Sentiti libero di contattarmi per collaborazioni o semplicemente per scambiare due chiacchiere su AI e Sviluppo.",
-    contact_email: "lorenzo.zambardi@example.com",
-    contact_github: "GitHub",
+      "Hai un'idea, un progetto innovativo in ambito AI/Software o vuoi semplicemente scambiare due chiacchiere? Inviami un messaggio.",
+    contact_direct_reach: "CONTATTO DIRETTO PROTETTO",
+    contact_copy_btn: "Copia",
+    contact_copied: "Copiata! ✓",
+    contact_anti_spam_hint:
+      "Antispam attivo: l'indirizzo reale è protetto da web-scraper automatici.",
+    contact_name_label: "Nome",
+    contact_name_placeholder: "Il tuo nome",
+    contact_email_label: "Email",
+    contact_email_placeholder: "iltuonome@email.com",
+    contact_subject_label: "Oggetto",
+    contact_subject_placeholder: "Di cosa vorresti parlare?",
+    contact_message_label: "Messaggio",
+    contact_message_placeholder:
+      "Raccontami del tuo progetto o della tua richiesta...",
+    contact_send_btn: "Invia Messaggio",
+    contact_sending: "Invio in corso...",
+    contact_success:
+      "Messaggio inviato con successo! Ti risponderò al più presto.",
+    contact_error:
+      "Si è verificato un errore durante l'invio. Riprova o copia l'indirizzo email sopra.",
   },
   en: {
     nav_home: "Home",
@@ -118,9 +138,27 @@ const translations = {
     project_link: "View on GitHub",
 
     contact_title: "Contact",
+    contact_status_available: "Available for new projects & collaborations",
+    contact_heading: "Let's build something extraordinary together.",
     contact_desc:
-      "Feel free to reach out to me for collaborations or just to chat about AI and Development.",
-    contact_email: "lorenzo.zambardi@example.com",
-    contact_github: "GitHub",
+      "Have an idea, an innovative AI/Software project, or just want to chat? Send me a message.",
+    contact_direct_reach: "SECURE DIRECT REACH",
+    contact_copy_btn: "Copy",
+    contact_copied: "Copied! ✓",
+    contact_anti_spam_hint:
+      "Anti-spam active: address is shielded from automated web scrapers.",
+    contact_name_label: "Name",
+    contact_name_placeholder: "Your name",
+    contact_email_label: "Email",
+    contact_email_placeholder: "yourname@email.com",
+    contact_subject_label: "Subject",
+    contact_subject_placeholder: "What would you like to discuss?",
+    contact_message_label: "Message",
+    contact_message_placeholder: "Tell me about your project or inquiry...",
+    contact_send_btn: "Send Message",
+    contact_sending: "Sending...",
+    contact_success: "Message sent successfully! I'll get back to you shortly.",
+    contact_error:
+      "An error occurred while sending. Please try again or copy the email address above.",
   },
 };

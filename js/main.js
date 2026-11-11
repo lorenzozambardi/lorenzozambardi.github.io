@@ -24,6 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.lang = lang;
     localStorage.setItem("preferredLang", lang);
 
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      if (translations[lang][key]) {
+        el.placeholder = translations[lang][key];
+      }
+    });
+
     // Check manually if already intersecting after lang change
     document.querySelectorAll(".animate-group").forEach((el) => {
       const rect = el.getBoundingClientRect();
@@ -390,4 +397,123 @@ document.addEventListener("DOMContentLoaded", () => {
       targetY = 0;
     });
   });
+
+  // Secure Email Obfuscation & Copy Functionality
+  const encodedEmail = "emFtYmFyZGlsb3JlbnpvQGdtYWlsLmNvbQ=="; // [redacted-email]
+  const copyEmailBtn = document.getElementById("copy-email-trigger");
+  const copyBtnText = copyEmailBtn?.querySelector(".copy-btn-text");
+
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener("click", () => {
+      const email = atob(encodedEmail);
+      navigator.clipboard.writeText(email).then(() => {
+        if (copyBtnText) {
+          const originalText = copyBtnText.textContent;
+          const copiedText =
+            currentLang === "it"
+              ? translations.it.contact_copied
+              : translations.en.contact_copied;
+          copyBtnText.textContent = copiedText;
+          copyEmailBtn.classList.add("copied");
+
+          setTimeout(() => {
+            copyBtnText.textContent = originalText;
+            copyEmailBtn.classList.remove("copied");
+          }, 2500);
+        }
+      });
+    });
+  }
+
+  // Interactive Contact Form Handling via FormSubmit AJAX
+  const contactForm = document.getElementById("contact-form");
+  const formFeedback = document.getElementById("form-feedback");
+  const submitBtn = document.getElementById("contact-submit-btn");
+  const submitBtnText = submitBtn?.querySelector(".text");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = contactForm.querySelector('[name="name"]')?.value.trim();
+      const email = contactForm.querySelector('[name="email"]')?.value.trim();
+      const subject = contactForm
+        .querySelector('[name="subject"]')
+        ?.value.trim();
+      const message = contactForm
+        .querySelector('[name="message"]')
+        ?.value.trim();
+      const honey = contactForm.querySelector('[name="_honey"]')?.value;
+
+      // Trap spam bots silently if honeypot is filled
+      if (honey) return;
+
+      if (!name || !email || !message) return;
+
+      const sendingText =
+        currentLang === "it"
+          ? translations.it.contact_sending
+          : translations.en.contact_sending;
+      const originalBtnText = submitBtnText ? submitBtnText.textContent : "";
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        if (submitBtnText) submitBtnText.textContent = sendingText;
+      }
+      if (formFeedback) {
+        formFeedback.className = "form-feedback";
+        formFeedback.textContent = "";
+      }
+
+      const recipient = atob(encodedEmail);
+
+      try {
+        const response = await fetch(
+          `https://formsubmit.co/ajax/${recipient}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              subject: subject || "Messaggio dal portfolio",
+              message,
+              _subject: `Nuovo messaggio portfolio da ${name}: ${subject || "Contatto"}`,
+            }),
+          },
+        );
+
+        if (response.ok) {
+          const successMsg =
+            currentLang === "it"
+              ? translations.it.contact_success
+              : translations.en.contact_success;
+          if (formFeedback) {
+            formFeedback.className = "form-feedback success";
+            formFeedback.textContent = successMsg;
+          }
+          contactForm.reset();
+        } else {
+          throw new Error("Submission failed");
+        }
+      } catch (err) {
+        const errorMsg =
+          currentLang === "it"
+            ? translations.it.contact_error
+            : translations.en.contact_error;
+        if (formFeedback) {
+          formFeedback.className = "form-feedback error";
+          formFeedback.textContent = errorMsg;
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          if (submitBtnText) submitBtnText.textContent = originalBtnText;
+        }
+      }
+    });
+  }
 });
