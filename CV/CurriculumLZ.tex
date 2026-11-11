@@ -1,0 +1,191 @@
+\documentclass[10pt,a4paper]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{charter} % Clean academic serif (matches the standard of Sapienza / ENS references)
+\usepackage[scaled=0.92]{helvet}
+\usepackage{inconsolata}
+\usepackage{geometry}
+\geometry{a4paper, top=1.6cm, bottom=1.6cm, left=1.85cm, right=1.85cm}
+
+\usepackage{xcolor}
+\definecolor{primary}{RGB}{20, 45, 95}       % Deep navy for headings
+\definecolor{accent}{RGB}{40, 70, 130}       % Slate blue for links/highlights
+\definecolor{subtext}{RGB}{85, 95, 110}      % Muted gray for metadata/dates
+\definecolor{darktext}{RGB}{30, 30, 30}      % Soft black for body text
+\definecolor{rulecolor}{RGB}{210, 215, 225}  % Subtle section divider rule
+
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks, colorlinks=true, urlcolor=accent, linkcolor=primary]{hyperref}
+
+% --- Web-Friendly Toggle ---
+% Set \webversiontrue before publishing to public web/GitHub (hides phone number)
+% Set \webversionfalse for formal applications/direct submissions (includes phone number)
+\newif\ifwebversion
+\webversionfalse
+
+% --- Page Setup & Typography ---
+\pagestyle{empty}
+\linespread{1.10}
+\color{darktext}
+
+% Section formatting
+\titleformat{\section}
+  {\large\bfseries\color{primary}}
+  {}{0em}
+  {}[\vspace{-2pt}\textcolor{rulecolor}{\rule{\textwidth}{0.8pt}}\vspace{-3pt}]
+
+\titlespacing*{\section}{0pt}{11pt}{6pt}
+\titlespacing*{\subsection}{0pt}{8pt}{3pt}
+
+% Custom list environment
+\setlist[itemize]{leftmargin=1.2em, itemsep=2.5pt, topsep=2pt, parsep=0pt}
+
+\begin{document}
+
+% ==============================================================================
+% HEADER
+% ==============================================================================
+\begin{center}
+    {\huge \textbf{\textcolor{primary}{Lorenzo Zambardi}}}\\[4pt]
+    {\large \textbf{B.Sc. Student in Mathematical Sciences for Artificial Intelligence (SMIA)}}\\[2pt]
+    {\textcolor{subtext}{Sapienza University of Rome \ $\cdot$ \ Faculty of Information Engineering, Informatics and Statistics}}\\[6pt]
+
+    \small
+    \faMapMarker*\ Rome, Italy \ $\cdot$\ Italian Citizen \ $\cdot$\ Born January 19, 2005 \\[3pt]
+    \faEnvelope\ \href{mailto:[redacted-email]}{[redacted-email]} \ $\cdot$\ 
+    \faEnvelope\ \href{mailto:[redacted-email]}{[redacted-email]} \\[3pt]
+    \ifwebversion
+      \faGlobe\ \href{https://lorenzozambardi.github.io}{lorenzozambardi.github.io} \ $\cdot$\ 
+      \faGithub\ \href{https://github.com/lorenzozambardi}{github.com/lorenzozambardi}
+    \else
+      \faPhone*\ [redacted-phone] \ $\cdot$\ 
+      \faGlobe\ \href{https://lorenzozambardi.github.io}{lorenzozambardi.github.io} \ $\cdot$\ 
+      \faGithub\ \href{https://github.com/lorenzozambardi}{github.com/lorenzozambardi}
+    \fi
+\end{center}
+
+\vspace{-4pt}
+
+% ==============================================================================
+% PROFILE & RESEARCH INTERESTS
+% ==============================================================================
+\section{Profile \& Research Interests}
+Undergraduate student in Mathematical Sciences for Artificial Intelligence (SMIA) at Sapienza University of Rome. Academic focus centers on the formal mathematical foundations of AI, combining deep theoretical study with computational implementation and rapid numerical prototyping.
+\begin{itemize}[leftmargin=1.0em]
+    \item \textbf{Core Interests}: Continuous \& Discrete Optimization, Mathematical Foundations of Machine Learning, Statistical Learning Theory, Numerical Analysis \& Scientific Computing, Computational Biomechanics.
+\end{itemize}
+
+% ==============================================================================
+% EDUCATION
+% ==============================================================================
+\section{Education}
+
+\noindent
+\textbf{Sapienza University of Rome} \hfill \textcolor{subtext}{Rome, Italy} \\
+\textit{B.Sc. in Mathematical Sciences for Artificial Intelligence (SMIA)} \hfill \textbf{2024 -- Present}
+\begin{itemize}
+    \item \textbf{Expected Graduation}: July 2027
+    \item \textbf{Degree Progress}: 126 / 180 ECTS completed (\textbf{70.0\%} of total degree requirements)
+    \item \textbf{Academic Standing}:
+    \begin{itemize}[label=--]
+        \item \textbf{Weighted Average}: \textbf{27.95} / 30 (Graduation base: \textbf{102.49} / 110)
+        \item \textbf{Adjusted Weighted Average} (excluding worst 12 ECTS): \textbf{28.47} / 30 (Graduation base: \textbf{104.40} / 110)
+        \item \textbf{Equivalent US GPA}: \textbf{3.73} / 4.0 (Raw) \ $\cdot$\ \textbf{3.80} / 4.0 (Adjusted)
+    \end{itemize}
+    \item \textbf{Selected Coursework (Graded 30 / 30)}:
+    \begin{itemize}[label=--]
+        \item \textbf{Linear Algebra and Algebraic Structures} (12 ECTS) -- \textbf{30 / 30}
+        \item \textbf{Machine Learning} (9 ECTS) -- \textbf{30 / 30}
+        \item \textbf{Numerical Methods} (9 ECTS) -- \textbf{30 / 30}
+    \end{itemize}
+\end{itemize}
+
+\vspace{5pt}
+\noindent
+\textbf{Liceo Scientifico Camillo Cavour} \hfill \textcolor{subtext}{Rome, Italy} \\
+\textit{High School Diploma (Scientific Curriculum)} \hfill \textbf{2019 -- 2024}
+\begin{itemize}
+    \item \textbf{Final Grade}: \textbf{100 / 100}
+    \item Rigorous preparation in mathematics, physics, and natural sciences.
+\end{itemize}
+
+% ==============================================================================
+% HONORS & AWARDS
+% ==============================================================================
+\section{Honors \& Academic Awards}
+
+\noindent
+\textbf{Academic Merit Tuition Waiver (\textit{Status Studente Meritevole})} \hfill \textbf{2024 -- 2026} \\
+\textit{Sapienza University of Rome}
+\begin{itemize}
+    \item Awarded 100\% tuition fee exemption for academic merit across two consecutive academic years (2024/2025 and 2025/2026), granted to top-performing students maintaining exemplary grade point average and accelerated credit completion.
+\end{itemize}
+
+\vspace{4pt}
+\noindent
+\textbf{High School Diploma with Maximum Honors (100 / 100)} \hfill \textbf{2024} \\
+\textit{Liceo Scientifico Camillo Cavour, Rome}
+\begin{itemize}
+    \item Graduated with the maximum attainable mark (100/100).
+\end{itemize}
+
+\clearpage
+
+% ==============================================================================
+% PROJECTS & COMPUTATIONAL IMPLEMENTATIONS
+% ==============================================================================
+\section{Projects \& Computational Implementations}
+
+\noindent
+\textbf{Iron Stats} \ $\vert$\ \textit{Lead Architect \& Mathematical Modeler} \hfill \href{https://github.com/lorenzozambardi}{GitHub: github.com/lorenzozambardi} \\
+\textit{Computational engine for biomechanical simulation, hypertrophy programming, and multi-objective optimization}
+\begin{itemize}
+    \item Personally conceived and formulated the mathematical modeling and numerical methods framework, replacing conventional raw tonnage metrics with continuous biomechanical and physiological simulations.
+    \item Modeled continuous muscle tension across joint Range of Motion (ROM) utilizing \textbf{3rd-degree Bézier curves}, capturing non-linear moment arms and dynamic joint lever variations.
+    \item Developed physiological simulation metrics: effective repetitions based on High-Threshold Motor Unit (HTMU) recruitment, dynamic Time Under Tension (TUT) factoring in involuntary muscle contraction deceleration, and exponential Central Nervous System (CNS) fatigue accumulation curves.
+    \item Formulated and solved a scalarized \textbf{multi-objective numerical optimization problem} to synthesize mathematically balanced exercise volume, progression rates, and fatigue mitigation protocols.
+    \item \textbf{Tech Stack}: Python, NumPy, SciPy (numerical optimization solvers), Matplotlib.
+\end{itemize}
+
+\vspace{6pt}
+\noindent
+\textbf{Neovim for STEM} \ $\vert$\ \textit{Creator \& Maintainer} \hfill \href{https://github.com/lorenzozambardi}{GitHub: github.com/lorenzozambardi} \\
+\textit{Modular, high-performance editor engineered for mathematical research and rapid LaTeX authoring}
+\begin{itemize}
+    \item Architected an ultra-fast, modular development environment engineered for STEM researchers and students, minimizing operational friction between formal thought and code/typesetting.
+    \item Implemented a real-time LaTeX authoring system featuring \textbf{context-aware, auto-expanding mathematical snippets} for rapid typing of complex theorems, proofs, matrices, and multi-index summations.
+    \item Integrated an end-to-end Python development toolchain (Pyright LSP, Black code formatting), unified cross-platform POSIX installation scripts, and bidirectional cursor synchronization (SyncTeX) with Zathura PDF viewer.
+    \item \textbf{Tech Stack}: Lua, Neovim API, LaTeX / SyncTeX, Pyright LSP, Bash, Arch Linux.
+\end{itemize}
+
+% ==============================================================================
+% TECHNICAL SKILLS
+% ==============================================================================
+\section{Technical Skills}
+
+\begin{itemize}
+    \item \textbf{Programming Languages}: Python (proficient; scientific stack \& ML algorithms), Rust (foundations), SQL (database querying \& relational design), x86/ARM Assembly (foundations from computer architecture).
+    \item \textbf{Scientific Computing \& ML Frameworks}: PyTorch, NumPy, SciPy, Scikit-learn, Matplotlib.
+    \item \textbf{Mathematical \& Numerical Methods}: Continuous \& Discrete Optimization, Multi-Objective Optimization, Cubic Bézier Curve Modeling, Numerical Linear Algebra, Stochastic Processes, Dynamic Systems Simulation.
+    \item \textbf{Operating Systems \& Developer Tools}: Arch Linux (daily driver environment), Neovim / Vim, Git \& GitHub (version control, open-source repository management), LaTeX / SyncTeX, Unix Shell / Bash.
+\end{itemize}
+
+% ==============================================================================
+% LANGUAGES
+% ==============================================================================
+\section{Languages}
+
+\begin{itemize}
+    \item \textbf{Italian}: Native speaker.
+    \item \textbf{English}: Full professional proficiency (\textbf{C1} operational competence).
+    \begin{itemize}[label=--]
+        \item \textbf{Cambridge B2 First} (FCE) certified on September 30, 2023 with a score of \textbf{179 / 190} (CEFR B2 Level, 1 point shy of Grade A / C1 boundary; technical and conversational fluency continuously expanded through English-medium university courses, scientific literature, and open-source collaboration).
+    \end{itemize}
+\end{itemize}
+
+\end{document}
