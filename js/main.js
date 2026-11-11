@@ -326,4 +326,68 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // 3D Tilt Hover Effect on Project Cards
+  const projectCards = document.querySelectorAll(".project-card");
+
+  projectCards.forEach((card) => {
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let rafId = null;
+    let isHovered = false;
+
+    // Subtle tilt angle ("di pochissimo")
+    const maxTilt = 4.5;
+
+    function updateCardTransform() {
+      currentX += (targetX - currentX) * 0.12;
+      currentY += (targetY - currentY) * 0.12;
+
+      card.style.transform = `perspective(1000px) rotateX(${currentX.toFixed(2)}deg) rotateY(${currentY.toFixed(2)}deg)`;
+
+      if (
+        isHovered ||
+        Math.abs(targetX - currentX) > 0.01 ||
+        Math.abs(targetY - currentY) > 0.01
+      ) {
+        rafId = requestAnimationFrame(updateCardTransform);
+      } else {
+        card.style.transform =
+          "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+        rafId = null;
+      }
+    }
+
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const percentX = (x / rect.width) * 2 - 1; // -1 (left) to 1 (right)
+      const percentY = (y / rect.height) * 2 - 1; // -1 (top) to 1 (bottom)
+
+      // Tilt towards the cursor
+      targetX = percentY * maxTilt;
+      targetY = -percentX * maxTilt;
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateCardTransform);
+      }
+    });
+
+    card.addEventListener("mouseenter", () => {
+      isHovered = true;
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateCardTransform);
+      }
+    });
+
+    card.addEventListener("mouseleave", () => {
+      isHovered = false;
+      targetX = 0;
+      targetY = 0;
+    });
+  });
 });
