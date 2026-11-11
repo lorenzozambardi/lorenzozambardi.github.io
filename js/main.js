@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Check manually if already intersecting after lang change
     document.querySelectorAll(".animate-group").forEach((el) => {
       const rect = el.getBoundingClientRect();
-      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
         el.classList.add("animated");
         triggerWordAnimation(el);
       }
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const wordObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
           if (!entry.target.classList.contains("animated")) {
             entry.target.classList.add("animated");
             triggerWordAnimation(entry.target);
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { rootMargin: "-10% 0px -10% 0px", threshold: [0, 0.5] },
+    { rootMargin: "-5% 0px -5% 0px", threshold: [0, 0.2, 0.5] },
   );
 
   document.querySelectorAll(".animate-group").forEach((el) => {
