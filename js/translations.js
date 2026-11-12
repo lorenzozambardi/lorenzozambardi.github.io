@@ -70,6 +70,8 @@ const translations = {
     contact_message_placeholder:
       "Raccontami del tuo progetto o della tua richiesta...",
     contact_send_btn: "Invia Messaggio",
+    contact_privacy_note:
+      "Questo modulo invia i dati tramite FormSubmit; nome ed email sono usati solo per risponderti.",
     contact_sending: "Invio in corso...",
     contact_success:
       "Messaggio inviato con successo! Ti risponderò al più presto.",
@@ -146,6 +148,8 @@ const translations = {
     contact_message_label: "Message",
     contact_message_placeholder: "Tell me about your project or inquiry...",
     contact_send_btn: "Send Message",
+    contact_privacy_note:
+      "This form delivers your data through FormSubmit; your name and email are used only to reply.",
     contact_sending: "Sending...",
     contact_success: "Message sent successfully! I'll get back to you shortly.",
     contact_error: "An error occurred while sending. Please try again later.",

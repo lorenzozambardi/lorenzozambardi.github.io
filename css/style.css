@@ -587,6 +587,7 @@ section {
   width: auto;
   height: 180px;
   max-width: 100%;
+  aspect-ratio: 602 / 734;
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.65));
@@ -852,6 +853,21 @@ section {
   background: rgba(239, 68, 68, 0.12);
   border: 1px solid rgba(239, 68, 68, 0.3);
   color: #f87171;
+}
+
+.form-privacy {
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.no-script-contact {
+  display: none;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 @media (max-width: 680px) {

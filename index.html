@@ -13,6 +13,32 @@
     <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet" />
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
+    <noscript>
+      <style>
+        #contact-form {
+          display: none;
+        }
+        .no-script-contact {
+          display: block;
+        }
+        .fade-in-section,
+        .hero-word {
+          opacity: 1;
+          transform: none;
+        }
+        #custom-cursor {
+          display: none !important;
+        }
+        body,
+        a,
+        button,
+        input,
+        select,
+        textarea {
+          cursor: auto !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <div id="custom-cursor" class="custom-cursor"></div>
@@ -293,7 +319,10 @@
                   src="img/projects/iron-stats-logo.png"
                   alt="Iron Stats Official Plate Logo"
                   class="iron-stats-disk"
+                  width="180"
+                  height="180"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -439,7 +468,10 @@
                   src="img/projects/neovim-logo.svg"
                   alt="Neovim Official Logo"
                   class="neovim-logo-img"
+                  width="148"
+                  height="180"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -602,7 +634,7 @@
             <form
               id="contact-form"
               class="interactive-contact-form"
-              autocomplete="off"
+              method="post"
             >
               <!-- Honeypot anti-spam trap -->
               <input
@@ -625,6 +657,8 @@
                     class="form-control"
                     placeholder="Il tuo nome"
                     data-i18n-placeholder="contact_name_placeholder"
+                    autocomplete="name"
+                    maxlength="100"
                     required
                   />
                 </div>
@@ -639,6 +673,8 @@
                     class="form-control"
                     placeholder="iltuonome@email.com"
                     data-i18n-placeholder="contact_email_placeholder"
+                    autocomplete="email"
+                    maxlength="254"
                     required
                   />
                 </div>
@@ -655,6 +691,7 @@
                   class="form-control"
                   placeholder="Di cosa vorresti parlare?"
                   data-i18n-placeholder="contact_subject_placeholder"
+                  maxlength="150"
                   required
                 />
               </div>
@@ -670,6 +707,7 @@
                   class="form-control form-textarea"
                   placeholder="Raccontami del tuo progetto o della tua richiesta..."
                   data-i18n-placeholder="contact_message_placeholder"
+                  maxlength="3000"
                   required
                 ></textarea>
               </div>
@@ -718,7 +756,20 @@
                   aria-live="polite"
                 ></div>
               </div>
+              <p class="form-privacy" data-i18n="contact_privacy_note">
+                Questo modulo invia i dati tramite FormSubmit; nome ed email
+                sono usati solo per risponderti.
+              </p>
             </form>
+            <p class="no-script-contact">
+              Per usare questo modulo è necessario JavaScript. Contattami su
+              <a
+                href="https://github.com/lorenzozambardi"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >.
+            </p>
           </div>
         </div>
       </section>
@@ -754,6 +805,7 @@
             <a
               href="https://linkedin.com/in/lorenzozambardi"
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
               <svg
@@ -776,6 +828,7 @@
             <a
               href="https://github.com/lorenzozambardi"
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="GitHub"
             >
               <svg

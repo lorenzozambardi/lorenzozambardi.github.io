@@ -398,8 +398,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Secure Email & Form Handling via FormSubmit AJAX
-  const encodedEmail = "emFtYmFyZGlsb3JlbnpvQGdtYWlsLmNvbQ=="; // [redacted-email]
+  // FormSubmit handling with a Base64-obfuscated recipient (anti-scraper hygiene, not secrecy)
+  const encodedEmail = "emFtYmFyZGlsb3JlbnpvQGdtYWlsLmNvbQ==";
   const contactForm = document.getElementById("contact-form");
   const formFeedback = document.getElementById("form-feedback");
   const submitBtn = document.getElementById("contact-submit-btn");

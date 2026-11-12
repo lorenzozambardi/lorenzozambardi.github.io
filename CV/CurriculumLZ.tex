@@ -26,7 +26,7 @@
 % Public build: set the flag to true before publishing to public web/GitHub
 % (omits email addresses and phone number).
 % Formal build: set the flag to false for formal applications/direct submissions
-% (includes email addresses and phone number).
+% (contact details are read from the untracked, gitignored CV/contact.tex).
 \newif\ifwebversion
 \webversionfalse
 
@@ -63,11 +63,13 @@
       \faGlobe\ \href{https://lorenzozambardi.github.io}{lorenzozambardi.github.io} \ $\cdot$\
       \faGithub\ \href{https://github.com/lorenzozambardi}{github.com/lorenzozambardi}
     \else
-      \faEnvelope\ \href{mailto:[redacted-email]}{[redacted-email]} \ $\cdot$\
-      \faEnvelope\ \href{mailto:[redacted-email]}{[redacted-email]} \\[3pt]
-      \faPhone*\ [redacted-phone] \ $\cdot$\
-      \faGlobe\ \href{https://lorenzozambardi.github.io}{lorenzozambardi.github.io} \ $\cdot$\
-      \faGithub\ \href{https://github.com/lorenzozambardi}{github.com/lorenzozambardi}
+      \IfFileExists{contact.tex}{%
+        \input{contact.tex}%
+      }{%
+        \PackageWarningNoLine{CurriculumLZ}{contact.tex not found; formal CV built without contact details}%
+        \faGlobe\ \href{https://lorenzozambardi.github.io}{lorenzozambardi.github.io} \ $\cdot$\
+        \faGithub\ \href{https://github.com/lorenzozambardi}{github.com/lorenzozambardi}%
+      }
     \fi
 \end{center}
 
