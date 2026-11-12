@@ -1425,6 +1425,6 @@ footer {
 @media (max-width: 768px) {
   main,
   footer {
-    zoom: 0.95;
+    zoom: 0.9;
   }
 }
