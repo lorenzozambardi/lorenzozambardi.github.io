@@ -16,6 +16,7 @@ const translations = {
       "Applico una filosofia di lavoro basata sull'efficienza e sulla riduzione di ogni frizione operativa tra pensiero e codice. Unisco lo studio teorico a un approccio di rapid prototyping, integrando strumenti di intelligenza artificiale per esplorare, testare e validare idee ad alta velocità.",
     about_text_3:
       "Il mio obiettivo è sviluppare progetti tecnologici ad alto impatto e orientati all'innovazione.",
+    about_download_cv: "Scarica CV",
     about_pillar_1_tag: "01 - FONDAMENTA",
     about_pillar_1_title: "Matematica & AI",
     about_pillar_1_desc:
@@ -92,6 +93,7 @@ const translations = {
       "I apply a work philosophy centered on efficiency and minimizing operational friction between thought and code. I bridge theoretical study with a rapid prototyping approach, integrating artificial intelligence tools to explore, test, and validate ideas at high speed.",
     about_text_3:
       "My goal is to develop high-impact, innovation-driven technological projects.",
+    about_download_cv: "Download CV",
     about_pillar_1_tag: "01 - FOUNDATIONS",
     about_pillar_1_title: "Mathematics & AI",
     about_pillar_1_desc:

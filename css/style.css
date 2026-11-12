@@ -402,6 +402,10 @@ section {
   margin-bottom: 0;
 }
 
+.about-cv-btn {
+  margin-top: 1.4rem;
+}
+
 .about-bento-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
