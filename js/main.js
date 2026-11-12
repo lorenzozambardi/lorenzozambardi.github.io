@@ -405,6 +405,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitBtn = document.getElementById("contact-submit-btn");
   const submitBtnText = submitBtn?.querySelector(".text");
 
+  // Client-side anti-abuse: a minimum fill time plus a one-minute cooldown.
+  // Static hosting cannot enforce rate limits server-side, so this is a
+  // deterrent layered on top of FormSubmit's filtering and the honeypot.
+  const CONTACT_COOLDOWN_MS = 60 * 1000;
+  const CONTACT_MIN_FILL_MS = 4000;
+  const CONTACT_COOLDOWN_KEY = "lz-contact-last-submit";
+  const contactFormMountedAt = Date.now();
+  let lastContactSubmitAt = 0;
+
+  try {
+    lastContactSubmitAt =
+      Number(localStorage.getItem(CONTACT_COOLDOWN_KEY)) || 0;
+  } catch {
+    lastContactSubmitAt = 0;
+  }
+
   if (contactForm) {
     contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -419,10 +435,27 @@ document.addEventListener("DOMContentLoaded", () => {
         ?.value.trim();
       const honey = contactForm.querySelector('[name="_honey"]')?.value;
 
-      // Trap spam bots silently if honeypot is filled
+      // Trap spam bots silently if the honeypot is filled or the form is
+      // submitted implausibly fast (no human fills four fields in 4 seconds).
       if (honey) return;
+      if (Date.now() - contactFormMountedAt < CONTACT_MIN_FILL_MS) return;
 
       if (!name || !email || !message) return;
+
+      const consent = contactForm.querySelector('[name="consent"]');
+      if (!consent?.checked) return;
+
+      if (Date.now() - lastContactSubmitAt < CONTACT_COOLDOWN_MS) {
+        const rateLimitedMsg =
+          currentLang === "it"
+            ? translations.it.contact_rate_limited
+            : translations.en.contact_rate_limited;
+        if (formFeedback) {
+          formFeedback.className = "form-feedback error";
+          formFeedback.textContent = rateLimitedMsg;
+        }
+        return;
+      }
 
       const sendingText =
         currentLang === "it"
@@ -455,6 +488,7 @@ document.addEventListener("DOMContentLoaded", () => {
               email,
               subject: subject || "Messaggio dal portfolio",
               message,
+              consent: "yes",
               _subject: `Nuovo messaggio portfolio da ${name}: ${subject || "Contatto"}`,
             }),
           },
@@ -470,6 +504,16 @@ document.addEventListener("DOMContentLoaded", () => {
             formFeedback.textContent = successMsg;
           }
           contactForm.reset();
+          lastContactSubmitAt = Date.now();
+          try {
+            localStorage.setItem(
+              CONTACT_COOLDOWN_KEY,
+              String(lastContactSubmitAt),
+            );
+          } catch {
+            // Storage may be unavailable (private mode); the in-memory
+            // cooldown still applies for this session.
+          }
         } else {
           throw new Error("Submission failed");
         }

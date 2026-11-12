@@ -70,8 +70,12 @@ const translations = {
     contact_message_placeholder:
       "Raccontami del tuo progetto o della tua richiesta...",
     contact_send_btn: "Invia Messaggio",
+    contact_consent_label:
+      "Acconsento al trattamento di nome, email e messaggio al solo fine di ricevere una risposta.",
     contact_privacy_note:
-      "Questo modulo invia i dati tramite FormSubmit; nome ed email sono usati solo per risponderti.",
+      "I dati sono inviati tramite FormSubmit e usati solo per risponderti; non sono condivisi con terzi.",
+    contact_rate_limited:
+      "Hai già inviato un messaggio da poco. Riprova tra un minuto.",
     contact_sending: "Invio in corso...",
     contact_success:
       "Messaggio inviato con successo! Ti risponderò al più presto.",
@@ -148,8 +152,12 @@ const translations = {
     contact_message_label: "Message",
     contact_message_placeholder: "Tell me about your project or inquiry...",
     contact_send_btn: "Send Message",
+    contact_consent_label:
+      "I consent to my name, email and message being processed for the sole purpose of receiving a reply.",
     contact_privacy_note:
-      "This form delivers your data through FormSubmit; your name and email are used only to reply.",
+      "Your data is sent through FormSubmit and used only to reply; it is not shared with third parties.",
+    contact_rate_limited:
+      "You've already sent a message recently. Please try again in a minute.",
     contact_sending: "Sending...",
     contact_success: "Message sent successfully! I'll get back to you shortly.",
     contact_error: "An error occurred while sending. Please try again later.",

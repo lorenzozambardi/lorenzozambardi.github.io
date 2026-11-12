@@ -6,7 +6,7 @@
     <title>Lorenzo Zambardi | Sviluppatore & Studente SMIA</title>
     <meta
       name="description"
-      content="Sito personale di Lorenzo Zambardi, studente in Statistica, Matematica e Intelligenza Artificiale alla Sapienza di Roma e sviluppatore software."
+      content="Sito personale di Lorenzo Zambardi, studente di Scienze Matematiche per l'Intelligenza Artificiale alla Sapienza di Roma e sviluppatore software."
     />
     <!-- Fonts: Product Sans -->
     <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
@@ -712,6 +712,20 @@
                 ></textarea>
               </div>
 
+              <div class="form-consent">
+                <input
+                  type="checkbox"
+                  id="form-consent"
+                  name="consent"
+                  value="yes"
+                  required
+                />
+                <label for="form-consent" data-i18n="contact_consent_label"
+                  >Acconsento al trattamento di nome, email e messaggio al solo
+                  fine di ricevere una risposta.</label
+                >
+              </div>
+
               <div class="form-footer">
                 <button
                   type="submit"
@@ -757,8 +771,8 @@
                 ></div>
               </div>
               <p class="form-privacy" data-i18n="contact_privacy_note">
-                Questo modulo invia i dati tramite FormSubmit; nome ed email
-                sono usati solo per risponderti.
+                I dati sono inviati tramite FormSubmit e usati solo per
+                risponderti; non sono condivisi con terzi.
               </p>
             </form>
             <p class="no-script-contact">
