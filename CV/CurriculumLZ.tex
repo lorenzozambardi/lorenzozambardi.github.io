@@ -23,8 +23,10 @@
 \usepackage[hidelinks, colorlinks=true, urlcolor=accent, linkcolor=primary]{hyperref}
 
 % --- Web-Friendly Toggle ---
-% Set \webversiontrue before publishing to public web/GitHub (hides phone number)
-% Set \webversionfalse for formal applications/direct submissions (includes phone number)
+% Public build: set the flag to true before publishing to public web/GitHub
+% (omits email addresses and phone number).
+% Formal build: set the flag to false for formal applications/direct submissions
+% (includes email addresses and phone number).
 \newif\ifwebversion
 \webversionfalse
 
@@ -57,14 +59,14 @@
 
     \small
     \faMapMarker*\ Rome, Italy \ $\cdot$\ Italian Citizen \ $\cdot$\ Born January 19, 2005 \\[3pt]
-    \faEnvelope\ \href{mailto:[redacted-email]}{[redacted-email]} \ $\cdot$\ 
-    \faEnvelope\ \href{mailto:[redacted-email]}{[redacted-email]} \\[3pt]
     \ifwebversion
-      \faGlobe\ \href{https://lorenzozambardi.github.io}{lorenzozambardi.github.io} \ $\cdot$\ 
+      \faGlobe\ \href{https://lorenzozambardi.github.io}{lorenzozambardi.github.io} \ $\cdot$\
       \faGithub\ \href{https://github.com/lorenzozambardi}{github.com/lorenzozambardi}
     \else
-      \faPhone*\ [redacted-phone] \ $\cdot$\ 
-      \faGlobe\ \href{https://lorenzozambardi.github.io}{lorenzozambardi.github.io} \ $\cdot$\ 
+      \faEnvelope\ \href{mailto:[redacted-email]}{[redacted-email]} \ $\cdot$\
+      \faEnvelope\ \href{mailto:[redacted-email]}{[redacted-email]} \\[3pt]
+      \faPhone*\ [redacted-phone] \ $\cdot$\
+      \faGlobe\ \href{https://lorenzozambardi.github.io}{lorenzozambardi.github.io} \ $\cdot$\
       \faGithub\ \href{https://github.com/lorenzozambardi}{github.com/lorenzozambardi}
     \fi
 \end{center}
@@ -74,11 +76,8 @@
 % ==============================================================================
 % PROFILE & RESEARCH INTERESTS
 % ==============================================================================
-\section{Profile \& Research Interests}
+\section{Profile}
 Undergraduate student in Mathematical Sciences for Artificial Intelligence (SMIA) at Sapienza University of Rome. Academic focus centers on the formal mathematical foundations of AI, combining theoretical rigor with computational implementation and numerical prototyping.
-\begin{itemize}[leftmargin=1.0em]
-    \item \textbf{Core Interests}: Continuous \& Discrete Optimization, Mathematical Foundations of Machine Learning, Statistical Learning Theory, Numerical Analysis \& Scientific Computing, Computational Biomechanics.
-\end{itemize}
 
 % ==============================================================================
 % EDUCATION
@@ -93,9 +92,8 @@ Undergraduate student in Mathematical Sciences for Artificial Intelligence (SMIA
     \item \textbf{Degree Progress}: 126 / 180 ECTS completed (\textbf{70.0\%} of total program requirements)
     \item \textbf{Academic Standing}:
     \begin{itemize}[label=--]
-        \item \textbf{Weighted Average (GPA)}: \textbf{27.95} / 30 (Graduation base: \textbf{102.49} / 110)
-        \item \textbf{Adjusted Weighted Average} (excluding lowest 12 ECTS): \textbf{28.47} / 30 (Graduation base: \textbf{104.40} / 110)
-        \item \textbf{US GPA Equivalent}: \textbf{3.73} / 4.0 (Raw) \ $\cdot$\ \textbf{3.80} / 4.0 (Adjusted)
+        \item \textbf{Weighted Average (GPA)}: \textbf{27.95} / 30 (approx. \textbf{3.73} / 4.0 US)
+        \item \textbf{Adjusted Weighted Average} (Sapienza graduation basis, lowest 12 ECTS excluded): \textbf{28.47} / 30 (approx. \textbf{3.80} / 4.0 US)
     \end{itemize}
     \item \textbf{Selected Coursework}:
     \begin{itemize}[label=--]
@@ -125,17 +123,11 @@ Undergraduate student in Mathematical Sciences for Artificial Intelligence (SMIA
 \noindent
 \textbf{Academic Merit Tuition Waiver (\textit{Status Studente Meritevole})} \hfill \textbf{2024 -- 2026} \\
 \textit{Sapienza University of Rome}
-\begin{itemize}
-    \item Awarded 100\% university tuition fee waiver for academic merit across two consecutive academic years (2024/2025 and 2025/2026), granted to top-ranked students maintaining exemplary grade point average and accelerated credit completion.
-\end{itemize}
 
 \vspace{4pt}
 \noindent
-\textbf{High School Diploma with Maximum Honors (100 / 100)} \hfill \textbf{2024} \\
+\textbf{High School Diploma (100 / 100)} \hfill \textbf{2024} \\
 \textit{Liceo Scientifico Camillo Cavour, Rome}
-\begin{itemize}
-    \item Graduated with the maximum attainable grade (100/100).
-\end{itemize}
 
 \clearpage
 
@@ -174,7 +166,6 @@ Undergraduate student in Mathematical Sciences for Artificial Intelligence (SMIA
 \begin{itemize}
     \item \textbf{Programming Languages}: Python (Proficient; numerical modeling, scientific computing, PyTorch ecosystem), Rust (Foundational), SQL (Relational database querying \& design), Assembly (x86/ARM architecture fundamentals).
     \item \textbf{Scientific Computing \& ML Frameworks}: PyTorch, NumPy, SciPy, Scikit-learn, Matplotlib.
-    \item \textbf{Mathematical \& Numerical Methods}: Continuous \& Discrete Optimization, Multi-Objective Optimization, Cubic Bézier Curve Modeling, Numerical Linear Algebra, Stochastic Processes, Dynamic Systems Simulation.
     \item \textbf{Operating Systems \& Developer Tools}: Arch Linux (daily driver environment), Neovim / Vim, Git \& GitHub (version control, open-source workflow), LaTeX / SyncTeX, Unix Shell / Bash.
 \end{itemize}
 
@@ -185,10 +176,8 @@ Undergraduate student in Mathematical Sciences for Artificial Intelligence (SMIA
 
 \begin{itemize}
     \item \textbf{Italian}: Native speaker.
-    \item \textbf{English}: Full professional proficiency (\textbf{C1} operational competence).
-    \begin{itemize}[label=--]
-        \item \textbf{Cambridge Assessment English}: B2 First certified (Score: \textbf{179 / 190}) -- Advanced operational fluency and technical writing actively maintained through English-medium university coursework, scientific literature, and open-source collaboration.
-    \end{itemize}
+    \item \textbf{English}: Fluent.
+    \item \textbf{Spanish}: Fair knowledge.
 \end{itemize}
 
 \end{document}
